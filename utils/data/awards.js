@@ -15,4 +15,13 @@ export const awards = [
     description: "Recognized on the President's List five times for academic excellence.",
     link: "https://meritpages.com/harry830",
   },
+  {
+    id: 3,
+    title: "Campus Atlanta Scholarship",
+    issuer: "Georgia State University",
+    date: "",
+    description:
+      "Merit-based award for qualified incoming international students that offers a 100% out-of-state tuition waiver.",
+    link: "",
+  },
 ];

@@ -1,13 +1,22 @@
 // @flow strict
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { courseworkData } from "@/utils/data/coursework";
 
 function Coursework() {
   const { inProgress, completed, nonMajor } = courseworkData;
   const [showNonMajor, setShowNonMajor] = useState(false);
-  const [today] = useState(() => new Date().toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }));
+  const today = useMemo(
+    () =>
+      new Intl.DateTimeFormat("en-US", {
+        timeZone: "UTC",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }).format(new Date()),
+    []
+  );
 
   return (
     <section id="coursework" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">

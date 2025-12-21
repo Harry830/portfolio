@@ -30,7 +30,13 @@ function Navbar() {
             <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#awards"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">Awards & Recognition</div></Link>
           </li>
           <li>
+            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#coursework"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">Coursework</div></Link>
+          </li>
+          <li>
             <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#education"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">Education & Certifications</div></Link>
+          </li>
+          <li>
+            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#professional-development"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">Leadership & Professional Dev</div></Link>
           </li>
           <li>
             {/* <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/blog"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">BLOGS</div></Link> */}

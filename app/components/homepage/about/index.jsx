@@ -23,13 +23,21 @@ function AboutSection() {
           </p>
         </div>
         <div className="flex justify-center order-1 lg:order-2">
-          <Image
-            src={personalData.profile}
-            width={280}
-            height={280}
-            alt="Hardik Saini"
-            className="rounded-lg transition-all duration-1000 hover:scale-110 cursor-pointer"
-          />
+          <div className="group relative">
+            <div
+              className="pointer-events-none absolute -inset-4 rounded-[28px] bg-[conic-gradient(from_120deg,rgba(168,85,247,0.4),rgba(236,72,153,0.35),rgba(34,211,238,0.35),rgba(168,85,247,0.4))] opacity-60 blur-2xl transition duration-500 group-hover:scale-105 group-hover:opacity-80 group-hover:blur-[42px]"
+              aria-hidden="true"
+            ></div>
+            <div className="relative rounded-[22px] bg-[#0b0f24] p-1.5 shadow-[0_0_30px_rgba(168,85,247,0.35)] transition duration-500 group-hover:shadow-[0_0_40px_rgba(236,72,153,0.45)]">
+              <Image
+                src={personalData.profile}
+                width={272}
+                height={272}
+                alt="Hardik Saini"
+                className="rounded-[18px] transition-all duration-700 group-hover:scale-105"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
