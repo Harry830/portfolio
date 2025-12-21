@@ -45,25 +45,29 @@ const generateEmailTemplate = (name, email, userMessage) => `
   </div>
 `;
 
-// Helper function to send an email via Nodemailer
+// Helper function to send an email via Nodemailer (optional channel)
 async function sendEmail(payload, message) {
   const { name, email, message: userMessage } = payload;
-  
+
+  if (!process.env.EMAIL_ADDRESS || !process.env.GMAIL_PASSKEY) {
+    return { ok: false, reason: 'email_not_configured' };
+  }
+
   const mailOptions = {
-    from: "Portfolio", 
-    to: process.env.EMAIL_ADDRESS, 
-    subject: `New Message From ${name}`, 
-    text: message, 
-    html: generateEmailTemplate(name, email, userMessage), 
-    replyTo: email, 
+    from: "Portfolio",
+    to: process.env.EMAIL_ADDRESS,
+    subject: `New Message From ${name}`,
+    text: message,
+    html: generateEmailTemplate(name, email, userMessage),
+    replyTo: email,
   };
-  
+
   try {
     await transporter.sendMail(mailOptions);
-    return true;
+    return { ok: true };
   } catch (error) {
-    console.error('Error while sending email:', error.message);
-    return false;
+    console.error('Error while sending email:', error?.message || error);
+    return { ok: false, reason: 'email_send_failed', detail: error?.message };
   }
 };
 
@@ -74,32 +78,34 @@ export async function POST(request) {
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chat_id = process.env.TELEGRAM_CHAT_ID;
 
-    // Validate environment variables
-    if (!token || !chat_id) {
-      return NextResponse.json({
-        success: false,
-        message: 'Telegram token or chat ID is missing.',
-      }, { status: 400 });
-    }
-
     const message = `New message from ${name}\n\nEmail: ${email}\n\nMessage:\n\n${userMessage}\n\n`;
 
-    // Send Telegram message
-    const telegramSuccess = await sendTelegramMessage(token, chat_id, message);
+    // Telegram (optional but preferred)
+    let telegramResult = { ok: false, reason: 'telegram_not_configured' };
+    if (token && chat_id) {
+      const ok = await sendTelegramMessage(token, chat_id, message);
+      telegramResult = ok ? { ok: true } : { ok: false, reason: 'telegram_send_failed' };
+    }
 
-    // Send email
-    const emailSuccess = await sendEmail(payload, message);
+    // Email (optional)
+    const emailResult = await sendEmail(payload, message);
 
-    if (telegramSuccess && emailSuccess) {
+    const anySuccess = telegramResult.ok || emailResult.ok;
+
+    if (anySuccess) {
       return NextResponse.json({
         success: true,
-        message: 'Message and email sent successfully!',
+        message: 'Message delivered',
+        telegram: telegramResult,
+        email: emailResult,
       }, { status: 200 });
     }
 
     return NextResponse.json({
       success: false,
-      message: 'Failed to send message or email.',
+      message: 'Failed to send via Telegram or email.',
+      telegram: telegramResult,
+      email: emailResult,
     }, { status: 500 });
   } catch (error) {
     console.error('API Error:', error.message);
