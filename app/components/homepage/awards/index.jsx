@@ -64,13 +64,14 @@ function Awards() {
                         {award.description}
                       </p>
                       {award.link && (
-                        <Link
-                          className="text-sm text-[#16f2b3] underline underline-offset-4 hover:text-pink-400 transition-colors"
+                        <a
+                          className="relative z-10 text-sm text-[#16f2b3] underline underline-offset-4 hover:text-pink-400 transition-colors"
                           href={award.link}
                           target="_blank"
+                          rel="noreferrer noopener"
                         >
                           View credential
-                        </Link>
+                        </a>
                       )}
                     </div>
                   </div>
