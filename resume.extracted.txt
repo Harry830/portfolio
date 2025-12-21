@@ -1,0 +1,67 @@
+﻿Warning: TT: undefined function: 21
+
+
+ 
+ 
+Hardik Saini 
+hsaini1@student.gsu.edu | (404) 203-2469 | linkedin.com/in/hardiksaini830/ | github.com/harry830 
+EDUCATION 
+Georgia State University, College of Arts & Sciences Atlanta, GA 
+Bachelor of Science | Major: CS | Honors College | GPA: 4.28/Major- 4.3 Expected Graduation: May 2027 
+Certifications : 100 Days of Code | Angela Yu , Machine Learning Specialization | Andrew Ng 
+Technical: Cloud Computing, Slurm, Kubernetes Unix Operability, Git, Machine Learning, Programming Languages proficiency (Python ,C , Java), 
+Technology Integration, Office 365 SharePoint Administration, System Troubleshooting, Hardware Configuration , Basic CI/CD. 
+Professional: Initiative and Problem Solving, Technical Troubleshooting, Team Collaboration , User Support and Training , Process Optimization 
+Relevant Courses: Cloud Computing, Computer Networks, Infrastructure System Design , Software Engineering ,Machine Learning ,Design 
+Analysis & Algorithms, Operating Systems, Software Development, Data Structures, Computer Organization, Discrete Mathematics 
+ 
+PROFESSIONAL EXPERIENCE 
+ 
+ARCTICΓÇôAdvanced Research Computing, Technology, Innovation & Collaboration | DevOps Intern | Atlanta,GA             July 2025 - Present 
+ΓÇó Work with the Infrastructure/DevOps team to operate Linux-based HPC clusters serving 500+ faculty and student researchers, helping maintain 
+99.99% uptime through proactive monitoring and fast incident response. 
+ΓÇó Troubleshoot and resolve 50+ issues related to Slurm job scheduling, file access, storage quotas, and environment modules, improving job 
+success rates and reducing wasted compute time.. 
+ΓÇó Analyze storage and I/O performance for large research workloads to identify bottlenecks and validate configuration changes for high-
+throughput data pipelines. 
+ΓÇó Help administer Globus Connect Server endpoints used for secure, high-speed terabyte-scale data transfers between GSU and partner 
+institutions. 
+ΓÇó Provide technical setup and backend support for workshops and research conferences (accounts, storage, compute access), ensuring reliable 
+demo environments and system availability during live events. 
+ 
+GSUΓÇôSTEM Tutoring Initiative (Math) & MILE Urban Life | Tutor & Lab Facilitator | Atlanta, GA               June 2024 ΓÇô July 2025 
+ΓÇó Provided one-on-one and group tutoring in algebra, calculus, and statistics to over 800 students, enhancing their understanding of complex 
+mathematical concepts 
+ΓÇó Developed tailored learning strategies that simplified problem-solving processes, driving up to threefold improvement in student performance 
+and grades. 
+ΓÇó Fostered a positive, engaging learning environment, boosting student confidence and success, resulting in an over 2 times increase in student 
+retention for tutoring sessions. 
+ 
+PROJECT EXPERIENCE 
+Speech Mate ΓÇô AI-Powered Public Speaking Coach | AI-ATL Hackathon (Georgia Tech) | Spring 2025 
+Link to Project 
+ΓÇó Built a full-stack app with a React + TypeScript + Vite frontend and a Java 21 / Spring Boot 3 backend, exposing REST APIs for speech 
+generation, multimodal analysis, and text-to-speech. 
+ΓÇó Implemented Gemini-powered endpoints using Spring WebFlux (WebClient) to handle video, slides, and notes uploads and return structured 
+JSON with scores, filler word counts, and detailed feedback. 
+ΓÇó Integrated Google OAuth 2.0 with Spring Security to secure user accounts and protect analysis and generation endpoints. 
+ΓÇó Designed the React UI to display analysis reports, recommendations, and playback audio, creating a smooth practice workflow for users. 
+GPT-Powered Department Assistant | Georgia Tech Hackathon (HackGTXI) | Fall 2024 
+Link to Project 
+ΓÇó Built a scalable GPT framework using Python, Flask, Lang-Chain and Azure, enabling the creation of department-specific virtual assistants 
+based on uploaded resources (FAQs, policies, etc.). 
+ΓÇó Enabled dynamic scenario updates and manual additions for improved assistant adaptability.  
+ΓÇó Developed a user-friendly interface allowing departments to upload FAQs, policies, and contact lists, reducing manual support tasks by 300% 
+through automated, intelligent responses. 
+ 
+LEADERSHIP & PROFESSIONAL DEVELOPMENT 
+ΓÇó COSMIC ΓÇô Community of Students in Science, Math, Innovation, and Computing | President | 2025 ΓÇô Present 
+ΓÇó Georgia Tech Hackathons  
+Γùª HackGTXI | Participant | September 2024 
+Γùª AI-ATL | Participant | November 2025 
+ΓÇó Penn State Hackathon (HackPSU) | Participant | March 2025 
+ΓÇó Computer Science Club | Member | 2023 ΓÇô Present 
+ΓÇó Math and Stats Club | Member | 2023 ΓÇô Present 
+ΓÇó LeetCode | Active Participant | 2024 ΓÇô Present 
+INTERSTS 
+Interests: Tech and Hardware Trends, Finding and Reporting Exploits, PC Building, Technology, Gym, Cricket, Gaming  
