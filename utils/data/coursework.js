@@ -25,12 +25,12 @@ export const courseworkData = {
       { name: "English Composition I", grade: "A+" },
       { name: "English Composition II", grade: "A+" },
 
-      { name: "Critical Thinking", grade: "A+" },
+      { name: "Critical Thinking", grade: "A" },
       { name: "American Government", grade: "A+" },
       { name: "Survey of US History", grade: "A+" },
       { name: "System Level Programming", grade: "A+" },
       { name: "Physics I & II", grade: "A+" },
-      { name: "Intro to General Psychology", grade: "A" },
+      { name: "Intro to General Psychology", grade: "A+" },
       { name: "Survey of World History to 1500", grade: "A" },
 
     ],
