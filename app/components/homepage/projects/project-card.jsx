@@ -19,6 +19,17 @@ function ProjectCard({ project }) {
         <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
           {project.name}
         </p>
+        {project.demo ? (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 py-1 text-xs font-semibold text-white shadow-md transition hover:shadow-pink-500/40 hover:from-violet-600 hover:to-pink-500"
+            aria-label={`Play ${project.name}`}
+          >
+            <span className="inline-block text-[13px] leading-none">▶</span>
+          </a>
+        ) : null}
       </div>
       <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
         <code className="font-mono text-xs md:text-sm lg:text-base">
