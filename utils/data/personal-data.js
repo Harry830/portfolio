@@ -2,7 +2,7 @@ export const personalData = {
   name: "Hardik Saini",
   profile: '/profile.jpg',
   designation: "Computer Science Student",
-  description: "I’m a Computer Science student who’s curious about how complex systems work and how to make them better. I gravitate toward challenges that sit between software and infrastructure, where problem-solving and optimization meet real-world impact. My interests lean into could computing , platform engineering, AI, cybersecurity, and high-performance computing, but more than any specific area, I thrive on learning quickly and adapting my skills to whatever problem is in front of me. I’m driven by curiosity, collaboration, and the excitement of building solutions that actually help people.",
+  description: "I’m a Computer Science student who’s curious about how complex systems work and how to make them better. I gravitate toward challenges that sit between software and infrastructure, where problem-solving and optimization meet real-world impact. I currently hold a 4.25 GPA on a 4.3 GPA scale. My interests lean into could computing , platform engineering, AI, cybersecurity, and high-performance computing, but more than any specific area, I thrive on learning quickly and adapting my skills to whatever problem is in front of me. I’m driven by curiosity, collaboration, and the excitement of building solutions that actually help people.",
   email: 'hardiksaini830@gmail.com',
   phone: '+14042032469',
   address: 'Atlanta, GA',

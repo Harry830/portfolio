@@ -99,6 +99,12 @@ function HeroSection() {
                 <span className="text-amber-300">Hardik Saini</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
+              <div>
+                <span className="ml-4 lg:ml-8 mr-2 text-white">GPA(max 4.3):</span>
+                <span className="text-gray-400">{`'`}</span>
+                <span className="text-amber-300">4.25</span>
+                <span className="text-gray-400">{`',`}</span>
+              </div>
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
