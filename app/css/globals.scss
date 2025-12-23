@@ -338,3 +338,102 @@ body.cheat-rainbow-frame {
   z-index: 115;
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
+
+.cheat-bottom-inline {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 10px 10px;
+  min-height: 18px;
+}
+
+.cheat-fab {
+  position: static;
+  z-index: 1;
+  padding: 4px 6px;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  background: linear-gradient(135deg, rgba(246, 38, 175, 0.7), rgba(22, 242, 179, 0.7));
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  opacity: 0.35;
+  transition: transform 140ms ease, opacity 140ms ease;
+}
+
+.cheat-fab:hover {
+  opacity: 0.7;
+  transform: translateY(-1px) scale(1.01);
+}
+
+.cheat-popover {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 6px);
+  z-index: 5;
+  width: min(88vw, 320px);
+  background: rgba(8, 10, 22, 0.94);
+  border: 1px solid rgba(130, 40, 236, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5);
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+}
+
+.cheat-popover-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cheat-popover-head button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e8ecff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cheat-popover-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.cheat-popover-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: rgba(17, 20, 36, 0.9);
+}
+
+.cheat-popover-label {
+  font-weight: 700;
+  color: #fefefe;
+  font-size: 12px;
+}
+
+.cheat-popover-trigger {
+  color: #9fb4ff;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.cheat-popover-effect {
+  color: #c6d0ff;
+  font-size: 11px;
+  text-align: right;
+}

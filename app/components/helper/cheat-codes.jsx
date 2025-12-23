@@ -54,6 +54,22 @@ const TYPED_CODES = [
   { code: "GRATITUDE", action: "gratitude" },
 ];
 
+const CHEAT_LIST = [
+  { label: "Konami", trigger: "↑ ↑ ↓ ↓ ← → ← → B A", effect: "Toggle CRT" },
+  { label: "SHOWTIME", trigger: "Type SHOWTIME", effect: "Guided tour" },
+  { label: "SPEEDRUN", trigger: "Type SPEEDRUN", effect: "Auto-scroll HUD" },
+  { label: "PIXELATE", trigger: "Type PIXELATE", effect: "Pixel art filter" },
+  { label: "NIGHTOWL", trigger: "Type NIGHTOWL", effect: "High-contrast terminal theme" },
+  { label: "RAINBOW", trigger: "Type RAINBOW", effect: "Gradient frame" },
+  { label: "BLOOM", trigger: "Type BLOOM", effect: "Soft particle layer" },
+  { label: "TIMETRAVEL", trigger: "Type TIMETRAVEL", effect: "Retro tint" },
+  { label: "CATMODE", trigger: "Type CATMODE", effect: "Cat follows cursor" },
+  { label: "CREDITS", trigger: "Type CREDITS", effect: "Secret credits modal" },
+  { label: "NERDALERT", trigger: "Type NERDALERT", effect: "Stack toast" },
+  { label: "ASCIIART", trigger: "Type ASCIIART", effect: "Console art" },
+  { label: "GRATITUDE", trigger: "Type GRATITUDE", effect: "Thank-you toast" },
+];
+
 const MAX_TYPED_BUFFER = 24;
 const MAX_SEQUENCE_BUFFER = 16;
 
@@ -178,6 +194,7 @@ export default function CheatCodes() {
   const [showtimeStep, setShowtimeStep] = useState(null);
   const [speedrun, setSpeedrun] = useState({ active: false, fps: 0, pct: 0 });
   const [cat, setCat] = useState({ active: false, x: 0, y: 0 });
+  const [showCheats, setShowCheats] = useState(false);
 
   const typedBuffer = useRef("");
   const seqBuffer = useRef([]);
@@ -228,6 +245,8 @@ export default function CheatCodes() {
     });
     toast(crtRef.current ? "CRT mode on" : "CRT mode off");
   };
+
+  const toggleCheatList = () => setShowCheats((prev) => !prev);
 
   const triggerShowtime = () => {
     if (prefersReducedMotion()) {
@@ -447,6 +466,30 @@ export default function CheatCodes() {
       <ShowtimeOverlay step={showtimeStep} label={showtimeLabel} onStop={stopShowtime} />
       <CreditsOverlay open={creditsOpen} onClose={() => setCreditsOpen(false)} />
       <CatFollower active={cat.active} x={cat.x} y={cat.y} />
+      <div className="cheat-bottom-inline">
+        <button className="cheat-fab" onClick={toggleCheatList} aria-expanded={showCheats} aria-controls="cheat-list-popover">
+          cheats
+        </button>
+        {showCheats ? (
+          <div id="cheat-list-popover" className="cheat-popover">
+            <div className="cheat-popover-head">
+              <span className="cheat-pill">Cheats</span>
+              <button onClick={toggleCheatList}>Close</button>
+            </div>
+            <div className="cheat-popover-body">
+              {CHEAT_LIST.map((item) => (
+                <div key={item.label} className="cheat-popover-row">
+                  <div>
+                    <p className="cheat-popover-label">{item.label}</p>
+                    <p className="cheat-popover-trigger">{item.trigger}</p>
+                  </div>
+                  <p className="cheat-popover-effect">{item.effect}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
     </>
   );
 }
