@@ -18,6 +18,7 @@ export const courseworkData = {
     { name: "Precalculus", grade: "A+" },
     { name: "Probability and Statistics", grade: "A+" },
     { name: "Linear Algebra", grade: "A+" },
+    { name: "System Level Programming", grade: "A+" },
   ],
   nonMajor: {
     inProgress: [],
@@ -28,7 +29,7 @@ export const courseworkData = {
       { name: "Critical Thinking", grade: "A" },
       { name: "American Government", grade: "A+" },
       { name: "Survey of US History", grade: "A+" },
-      { name: "System Level Programming", grade: "A+" },
+
       { name: "Physics I & II", grade: "A+" },
       { name: "Intro to General Psychology", grade: "A+" },
       { name: "Survey of World History to 1500", grade: "A" },
