@@ -3,6 +3,7 @@
 
 import { useMemo, useState } from "react";
 import { courseworkData } from "@/utils/data/coursework";
+import GlowCard from "../../helper/glow-card";
 
 function Coursework() {
   const { inProgress, completed, nonMajor } = courseworkData;
@@ -52,17 +53,19 @@ function Coursework() {
               <p className="text-lg font-semibold text-white">In Progress</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {inProgress.map((course) => (
-                <div
+              {inProgress.map((course, idx) => (
+                <GlowCard
                   key={course}
-                  className="group relative overflow-hidden rounded-lg border border-[#1f223c] bg-[#0f1326]/80 px-4 py-4 transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                  identifier={`coursework-inprogress-${idx}`}
+                  className="h-full"
+                  cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                   <div className="relative flex items-start gap-3">
                     <span className="mt-1 h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_0_6px_rgba(251,191,36,0.12)]"></span>
                     <p className="text-sm sm:text-base text-white leading-6">{course}</p>
                   </div>
-                </div>
+                </GlowCard>
               ))}
             </div>
           </div>
@@ -73,10 +76,12 @@ function Coursework() {
               <p className="text-lg font-semibold text-white">Completed</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {completed.map((course) => (
-                <div
+              {completed.map((course, idx) => (
+                <GlowCard
                   key={course.name}
-                  className="group relative overflow-hidden rounded-lg border border-[#1f223c] bg-[#0f1326]/80 px-4 py-4 transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                  identifier={`coursework-completed-${idx}`}
+                  className="h-full"
+                  cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                   <div className="relative flex items-start gap-3">
@@ -88,7 +93,7 @@ function Coursework() {
                       </span>
                     </div>
                   </div>
-                </div>
+                </GlowCard>
               ))}
             </div>
           </div>
@@ -115,23 +120,27 @@ function Coursework() {
 
             {showNonMajor && (
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {(nonMajor.inProgress || []).map((course) => (
-                  <div
+                {(nonMajor.inProgress || []).map((course, idx) => (
+                  <GlowCard
                     key={`nonMajor-inprogress-${course}`}
-                    className="group relative overflow-hidden rounded-lg border border-[#1f223c] bg-[#0f1326]/80 px-4 py-4 transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                    identifier={`coursework-nonmajor-inprogress-${idx}`}
+                    className="h-full"
+                    cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_0_6px_rgba(251,191,36,0.12)]"></span>
                       <p className="text-sm sm:text-base text-white leading-6">{course}</p>
                     </div>
-                  </div>
+                  </GlowCard>
                 ))}
 
-                {(nonMajor.completed || []).map((course) => (
-                  <div
+                {(nonMajor.completed || []).map((course, idx) => (
+                  <GlowCard
                     key={`nonMajor-completed-${course.name}`}
-                    className="group relative overflow-hidden rounded-lg border border-[#1f223c] bg-[#0f1326]/80 px-4 py-4 transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                    identifier={`coursework-nonmajor-completed-${idx}`}
+                    className="h-full"
+                    cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-start gap-3">
@@ -145,7 +154,7 @@ function Coursework() {
                         ) : null}
                       </div>
                     </div>
-                  </div>
+                  </GlowCard>
                 ))}
               </div>
             )}
