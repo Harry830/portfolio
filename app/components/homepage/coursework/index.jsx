@@ -58,7 +58,7 @@ function Coursework() {
                   key={course}
                   identifier={`coursework-inprogress-${idx}`}
                   className="h-full"
-                  cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                  cardClassName="group rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                   <div className="relative flex items-start gap-3">
@@ -81,7 +81,7 @@ function Coursework() {
                   key={course.name}
                   identifier={`coursework-completed-${idx}`}
                   className="h-full"
-                  cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                  cardClassName="group rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                   <div className="relative flex items-start gap-3">
@@ -125,7 +125,7 @@ function Coursework() {
                     key={`nonMajor-inprogress-${course}`}
                     identifier={`coursework-nonmajor-inprogress-${idx}`}
                     className="h-full"
-                    cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                    cardClassName="group rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-start gap-3">
@@ -140,7 +140,7 @@ function Coursework() {
                     key={`nonMajor-completed-${course.name}`}
                     identifier={`coursework-nonmajor-completed-${idx}`}
                     className="h-full"
-                    cardClassName="group overflow-hidden rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
+                    cardClassName="group rounded-lg bg-[#0f1326]/80 px-4 py-4 border-[#1f223c] transition-transform duration-300 hover:-translate-y-1 hover:border-pink-500/60"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-[#16f2b3]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                     <div className="relative flex items-start gap-3">
