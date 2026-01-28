@@ -16,5 +16,13 @@ export const educations = [
     title: "100 Days of code : The Complete Python Pro Bootcamp for 2022",
     duration: "November 2022",
     institution: "Angela Yu - Udemy",
+  },
+  {
+    id: 4,
+    title: "Intermediate Technical Interview Prep",
+    duration: "May 2025",
+    institution: "CodePath.org",
   }
+  
+
 ]
