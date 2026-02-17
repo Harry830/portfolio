@@ -1,5 +1,14 @@
 export const projectsData = [
     {
+        id: 1,
+        name: 'Stockd – AI-Powered Restaurant Inventory & Forecasting Platform',
+        description: 'Stockd is an AI-powered inventory management platform for restaurants that helps operators cut food waste, prevent stockouts, and maximize profit. It combines real-time inventory tracking (powered by a transaction ledger), recipe/BOM-based ingredient usage, and demand forecasting to generate accurate reorder alerts and suggested order quantities. Stockd also includes an AI copilot (Google Gemini) that lets managers ask natural-language questions like “What’s running low?” or “What should I order this week?” and get clear, actionable answers—built to be simple for non-technical users and scalable for modern restaurant operations.',
+        tools: ["Supabase (PostgreSQL + Realtime + Auth + RLS)", "PostgreSQL Functions/RPC", "Google Gemini API", "Vanilla JavaScript", "HTML5", "CSS3", "Chart.js", "PapaParse", "Node.js", "Git/GitHub"],
+        code: '',
+        role: 'Backend Architect',
+        demo: 'https://www.stockd.us/',
+    },
+    {
         id: 2,
         name: 'Speech Mate – AI-Powered Public Speaking Coach',
         description: "Built a full-stack app with a React + TypeScript + Vite frontend and a Java 21 / Spring Boot 3 backend, exposing REST APIs for speech generation, multimodal analysis, and text-to-speech. Implemented Gemini-powered endpoints via Spring WebFlux to ingest video, slides, and notes and return structured JSON with scores, filler word counts, and detailed feedback. Integrated Google OAuth 2.0 with Spring Security to secure user accounts and protect analysis and generation endpoints. Designed the React UI to surface analysis reports, recommendations, and playback audio for a smooth practice workflow.",
@@ -17,26 +26,7 @@ export const projectsData = [
         code: '',
         demo: 'https://devpost.com/software/department-assistant', 
     },
-    {
-        id: 1,
-        name: 'Stockd – AI-Powered Restaurant Inventory & Forecasting Platform',
-        description: 'Stockd is an AI-powered inventory management platform for restaurants that helps operators cut food waste, prevent stockouts, and maximize profit. It combines real-time inventory tracking (powered by a transaction ledger), recipe/BOM-based ingredient usage, and demand forecasting to generate accurate reorder alerts and suggested order quantities. Stockd also includes an AI copilot (Google Gemini) that lets managers ask natural-language questions like “What’s running low?” or “What should I order this week?” and get clear, actionable answers—built to be simple for non-technical users and scalable for modern restaurant operations.',
-        tools: ["Supabase (PostgreSQL + Realtime + Auth + RLS)", "PostgreSQL Functions/RPC", "Google Gemini API", "Vanilla JavaScript", "HTML5", "CSS3", "Chart.js", "PapaParse", "Node.js", "Git/GitHub"],
-        code: '',
-        role: 'Backend Architect',
-        demo: 'https://www.stockd.us/',
-    },
-    // {
-    //     id: 4,
-    //     name: 'Newsroom Management',
-    //     description: "My team and I developed a newspaper management dashboard application called Newsroom Management. As a front-end developer, I worked on creating the dashboard using NextJS, Material UI, Redux, Calendar, and other necessary npm libraries. We used React Redux to manage the application's state and React-hook-form and Sun Editor to handle forms.",
-    //     tools: ['NextJS', 'Material UI', 'Redux', 'Sun Editor', "Calendar"],
-    //     code: '',
-    //     demo: '',
-    //     role: 'Full Stack Developer',
-    // }
 ];
-
 
 // Do not remove any property.
 // Leave it blank instead as shown below
@@ -48,5 +38,4 @@ export const projectsData = [
 //     tools: [],
 //     role: '',
 //     code: '',
-//     demo: '',
 // },

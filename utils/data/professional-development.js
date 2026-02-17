@@ -14,6 +14,7 @@ export const professionalDevelopmentSections = [
     title: "Hackathons & Conferences",
     accent: "from-pink-500/25 via-purple-500/20 to-blue-400/25",
     items: [
+      { name: "UGAHACKS XI | WINNER 👑", role: "Participant", timeline: "February 2026" },
       { name: "KubeCon + CloudNativeCon", role: "Participant", timeline: "2025" },
       { name: "HackGTXI", role: "Participant", timeline: "September 2024" },
       { name: "AI-ATL", role: "Participant", timeline: "November 2025" },

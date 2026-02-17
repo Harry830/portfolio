@@ -11,10 +11,5 @@ export const experiences = [
     company: "GSU–STEM Tutoring Initiative (Math) & MILE Urban Life",
     duration: "June 2024 – July 2025"
   },
-//   {
-//     id: 3,
-//     title: "Self Employed",
-//     company: "Code and build something in everyday.",
-//     duration: "(Jan 2018 - Present)"
-//   }
+
 ]
