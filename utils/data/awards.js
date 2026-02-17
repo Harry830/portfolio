@@ -1,7 +1,7 @@
 export const awards = [
   {
     id: 1,
-    title: "UGAHACKSXI Winner | NCR VOYIX Track (First Place)",
+    title: "👑UGAHACKSXI Winner | NCR VOYIX Track (First Place)",
     issuer: "UGAHACKS",
     date: "Spring 2026",
     description:
