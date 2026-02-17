@@ -6,7 +6,7 @@ export const awards = [
     date: "Spring 2026",
     description:
       "Won UGAHacks XI in the NCR Voyix Challenge track by building Stockd, an AI-powered restaurant inventory + forecasting platform that helps operators cut waste, save time, and make smarter ordering decisions.",
-    link: "https://www.stockd.us/",
+    link: "https://devpost.com/software/stockd",
   },
   {
     id: 2,
