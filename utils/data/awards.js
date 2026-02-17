@@ -1,11 +1,11 @@
 export const awards = [
   {
     id: 1,
-    title: "Delta Analytics Scholars Scholarship",
-    issuer: "Recipient",
-    date: "",
-    description: "Awarded the Delta Analytics Scholars scholarship.",
-    link: "",
+    title: "UGAHACKSXI Winner | NCR VOYIX Track (First Place)",
+    issuer: "UGAHACKS",
+    date: "Spring 2026",
+    description: "Won UGAHacks XI in the NCR Voyix Challenge track by building Stockd, an AI-powered restaurant inventory + forecasting platform that helps operators cut waste, save time, and make smarter ordering decisions.",
+    link: "https://www.stockd.us/",
   },
   {
     id: 2,
@@ -22,6 +22,14 @@ export const awards = [
     date: "",
     description:
       "Merit-based award for qualified incoming international students that offers a 100% out-of-state tuition waiver.",
+    link: "",
+  },
+  {
+    id: 4,
+    title: "Delta Analytics Scholars Scholarship",
+    issuer: "Recipient",
+    date: "",
+    description: "Awarded the Delta Analytics Scholars scholarship.",
     link: "",
   },
 ];
