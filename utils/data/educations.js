@@ -1,7 +1,7 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor of Science | Computer Science | Honors College GPA: Overall - 4.25, Major - 4.3 (Scale : 4.3)",
+    title: "Bachelors of Science in Computer Science | Honors GPA: Overall - 4.25, Major - 4.3 (Scale : 4.3)",
     duration: "Fall 2023 - Present",
     institution: "Georgia State University",
   },
