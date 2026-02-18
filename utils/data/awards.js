@@ -1,11 +1,11 @@
 export const awards = [
   {
     id: 1,
-    title: "👑UGAHACKSXI Winner | NCR VOYIX Track (First Place)",
+    title: "👑 UGAHACKSXI Winner | NCR VOYIX Track",
     issuer: "UGAHACKS",
     date: "Spring 2026",
     description:
-      "Won UGAHacks XI in the NCR Voyix Challenge track by building Stockd, an AI-powered restaurant inventory + forecasting platform that helps operators cut waste, save time, and make smarter ordering decisions.",
+      "Won UGAHacks XI in the NCR Voyix track by building Stockd, an AI-powered restaurant inventory + forecasting platform that helps operators cut waste, save time, and make smarter ordering decisions.",
     link: "https://devpost.com/software/stockd",
   },
   {
