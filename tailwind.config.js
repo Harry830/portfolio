@@ -7,6 +7,40 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        cream: {
+          DEFAULT: '#f6f2ea',
+          soft: '#efe8db',
+          warm: '#ebe2d1',
+        },
+        paper: '#fbf8f1',
+        ink: {
+          DEFAULT: '#16161a',
+          soft: '#2a2a30',
+          muted: '#4a4a52',
+          faint: '#6c6c75',
+          ghost: '#a0a09a',
+        },
+        amber: {
+          DEFAULT: '#c8843d',
+          deep: '#a26425',
+          soft: '#e7b27a',
+        },
+        charcoal: {
+          DEFAULT: '#0e0e10',
+          soft: '#1a1a1d',
+        },
+        chrome: {
+          1: '#d8d8db',
+          2: '#a4a6ac',
+          3: '#6b6e75',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -15,19 +49,15 @@ module.exports = {
       container: {
         center: true,
         padding: {
-          DEFAULT: "1rem",
-          sm: "2rem",
-          lg: "3rem",
-          xl: "4rem",
-          "2xl": "4rem",
-          "3xl": "5rem",
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '3rem',
+          xl: '4rem',
+          '2xl': '4rem',
         },
       },
-
-      extend: {
-        screens: {
-          "4k": "1980px",
-        },
+      screens: {
+        '4k': '1980px',
       },
     },
   },

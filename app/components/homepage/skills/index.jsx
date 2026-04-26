@@ -1,71 +1,61 @@
-// @flow strict
-
 import { skillsData } from "@/utils/data/skills";
-import { skillsImage } from "@/utils/skill-image";
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
 
-function Skills() {
+export default function Skills() {
+  // Duplicate the array for a seamless marquee loop.
+  const track = [...skillsData, ...skillsData];
+
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
-
-      <div className="flex justify-center -translate-y-[1px]">
-        <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+    <section id="skills" className="relative my-20 lg:my-28">
+      <div className="reveal reveal-up grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-8 lg:mb-12">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">Toolkit</p>
+          <h2 className="mt-4 display-lg text-[var(--ink)]">
+            What I <span className="editorial-italic text-[var(--amber-deep)]">reach for</span>.
+          </h2>
         </div>
+        <p className="lg:col-span-5 text-base text-[var(--ink-muted)] leading-relaxed">
+          Languages, frameworks, and infrastructure I work with day-to-day across
+          full-stack products and HPC.
+        </p>
       </div>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
+      <div
+        className="reveal reveal-up relative overflow-hidden surface-cream py-8"
+        aria-hidden={false}
+      >
+        {/* fade edges */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10"
+          style={{
+            background:
+              "linear-gradient(to right, var(--bg-cream-soft), transparent)",
+          }}
+        />
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10"
+          style={{
+            background:
+              "linear-gradient(to left, var(--bg-cream-soft), transparent)",
+          }}
+        />
 
-      <div className="w-full my-12">
-        <Marquee
-          gradient={false}
-          speed={80}
-          pauseOnHover={true}
-          pauseOnClick={true}
-          delay={0}
-          play={true}
-          direction="left"
-        >
-          {skillsData.map((skill, id) => (
-            <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
-              key={id}>
-              <div className="h-full w-full rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
-                <div className="flex -translate-y-[1px] justify-center">
-                  <div className="w-3/4">
-                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-                  </div>
-                </div>
-                <div className="flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="h-8 sm:h-10">
-                    <Image
-                      src={skillsImage(skill)?.src}
-                      alt={skill}
-                      width={40}
-                      height={40}
-                      className="h-full w-auto rounded-lg"
-                    />
-                  </div>
-                  <p className="text-white text-sm sm:text-lg">
-                    {skill}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <ul className="marquee-track" role="list">
+          {track.map((skill, i) => (
+            <li
+              key={`${skill}-${i}`}
+              className="flex items-center gap-3 px-5 py-2 rounded-full border border-[var(--line)] bg-[var(--paper)] mono text-sm text-[var(--ink-soft)] whitespace-nowrap"
+            >
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-[var(--amber)]"
+                aria-hidden
+              />
+              {skill}
+            </li>
           ))}
-        </Marquee>
+        </ul>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Skills;
+}

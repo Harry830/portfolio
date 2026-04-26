@@ -1,17 +1,19 @@
 export const personalData = {
   name: "Hardik Saini",
-  profile: '/profile.jpg',
-  designation: "Computer Science Student",
-  description: "I’m a Computer Science student who’s curious about how complex systems work and how to make them better. I gravitate toward challenges that sit between software and infrastructure, where problem-solving and optimization meet real-world impact. My interests lean into could computing , platform engineering, AI, cybersecurity, and high-performance computing, but more than any specific area, I thrive on learning quickly and adapting my skills to whatever problem is in front of me. I’m driven by curiosity, collaboration, and the excitement of building solutions that actually help people.",
-  email: 'hardiksaini830@gmail.com',
-  phone: '+14042032469',
-  address: 'Atlanta, GA',
-  github: 'https://github.com/harry830',
-  facebook: 'https://www.facebook.com/abusaid.riyaz/',
-  linkedIn: 'https://www.linkedin.com/in/hardiksaini830/',
-  twitter: 'https://twitter.com/said7388',
-  stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-  leetcode: "https://leetcode.com/said3812/",
+  firstName: "Hardik",
+  lastName: "Saini",
+  profile: "/profile.jpg",
+  designation: "CS @ Georgia State · ARCTIC HPC · Mercedes-Benz USA Intern",
+  shortBio:
+    "I build practical AI, cloud, and enterprise tools that turn messy workflows into usable systems.",
+  description:
+    "I'm a Computer Science junior at Georgia State University working at the intersection of AI, cloud, and enterprise systems. I help operate GSU's research HPC cluster with the ARCTIC team, ship products with student startup programs, and care most about turning messy real-world workflows into systems people actually want to use. I move fast, learn faster, and prefer building over talking.",
+  email: "hardiksaini830@gmail.com",
+  phone: "+14042032469",
+  address: "Atlanta, GA",
+  github: "https://github.com/harry830",
+  linkedIn: "https://www.linkedin.com/in/hardiksaini830/",
+  leetcode: "https://leetcode.com/u/harry830/",
   devUsername: "harry830",
-  resume: "https://github.com/Harry830/Resume/blob/main/Hardik%20Saini%20Resume.docx"
-}
+  resume: "/Hardik%20Saini%20Resume.pdf",
+};

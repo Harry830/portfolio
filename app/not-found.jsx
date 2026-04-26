@@ -1,21 +1,20 @@
-// @flow strict
-
 import Link from "next/link";
 
-function page() {
+export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center">
-      <h1 className="text-6xl font-bold text-gray-800 dark:text-gray-100">404</h1>
-      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">Page Not Found</p>
-      <p className="mt-2 text-gray-500 dark:text-gray-400">Sorry, the page you are looking for does not exist.</p>
-      <Link className="mt-5 flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 text-center text-xs md:text-sm font-medium tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-        role="button" 
-        href="/"
-      >
-        Go to Home
+    <div className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
+      <p className="mono text-xs uppercase tracking-[0.22em] text-[var(--ink-faint)]">
+        Error · 404
+      </p>
+      <h1 className="mt-5 display-xl text-[var(--ink)]">
+        Page <span className="editorial-italic text-[var(--amber-deep)]">not found</span>.
+      </h1>
+      <p className="mt-4 text-base text-[var(--ink-muted)] max-w-md">
+        Looks like that path doesn&apos;t exist. Let&apos;s get you back home.
+      </p>
+      <Link href="/" className="btn-primary mt-8 no-underline">
+        Back to home <span aria-hidden>↗</span>
       </Link>
     </div>
   );
-};
-
-export default page;
+}
