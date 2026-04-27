@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { projectsData } from "@/utils/data/projects-data";
 import ProjectTile from "./project-tile";
@@ -9,22 +9,43 @@ import ProjectTile from "./project-tile";
  * Pinned horizontal scroller. The user scrolls vertically; the tiles
  * translate horizontally. Each tile is its own framed card with a placeholder
  * gradient hero (real images drop into /public/image/projects/* later).
- * 
+ *
  * On mobile (<768px), converts to vertical stacked cards for better UX.
+ *
+ * Translation is calculated from MEASURED track + viewport widths so the last
+ * tile lands flush right with no empty trailing gutter.
  */
 export default function HorizontalWork() {
   const ref = useRef(null);
+  const trackRef = useRef(null);
+  const [maxTranslate, setMaxTranslate] = useState(0);
+  const tiles = projectsData.length;
+
+  useLayoutEffect(() => {
+    const measure = () => {
+      const track = trackRef.current;
+      if (!track) return;
+      const trackWidth = track.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      // Right-align the last tile, plus a tiny breathing pad so it isn't kissing the edge
+      const max = Math.max(0, trackWidth - viewportWidth + 16);
+      setMaxTranslate(max);
+    };
+    measure();
+    // Run again after fonts/images settle
+    const t = setTimeout(measure, 120);
+    window.addEventListener("resize", measure);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
-
-  // Number of tiles + 1 for the intro card
-  const tiles = projectsData.length;
-  // Translate so the last tile lands flush right.
-  // We translate by (tiles)/(tiles+1) of the track width.
-  const translatePct = -(tiles) / (tiles + 1) * 100;
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `${translatePct}%`]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -maxTranslate]);
   const progressBar = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
@@ -34,9 +55,9 @@ export default function HorizontalWork() {
         id="work"
         ref={ref}
         className="relative hidden md:block"
-        style={{ height: `${(tiles + 1) * 90}vh` }}
+        style={{ height: `${(tiles + 1) * 75}vh` }}
       >
-        <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
+        <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-32 lg:pt-40 pb-20">
           {/* Header lockup */}
           <div className="absolute top-8 lg:top-12 left-0 right-0 px-5 sm:px-8 lg:px-12 z-10 pointer-events-none">
             <div className="flex items-end justify-between gap-6">
@@ -53,6 +74,7 @@ export default function HorizontalWork() {
           </div>
 
           <motion.div
+            ref={trackRef}
             style={{ x }}
             className="horizontal-track flex gap-6 lg:gap-10 will-change-transform pl-5 sm:pl-8 lg:pl-12 pr-[8vw]"
           >

@@ -23,19 +23,6 @@ const ROLE_TITLES = [
   "Atlanta, GA",
 ];
 
-const TOOLS_TICKER = [
-  "Python",
-  "Spring Boot",
-  "Next.js",
-  "Postgres",
-  "Slurm",
-  "Kubernetes",
-  "Supabase",
-  "Gemini",
-  "AWS",
-  "Linux",
-];
-
 export default function Home() {
   return (
     <div suppressHydrationWarning>
@@ -52,10 +39,6 @@ export default function Home() {
       <Experience />
       <Programs />
       <AboutSection />
-
-      <div className="bleed my-12 lg:my-20">
-        <MarqueeStrip items={TOOLS_TICKER} direction="right" speed={28} variant="label" separator="·" />
-      </div>
 
       <Skills />
       <Awards />

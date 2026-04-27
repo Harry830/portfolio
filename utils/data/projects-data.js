@@ -27,7 +27,7 @@ export const projectsData = [
   },
   {
     id: 2,
-    name: "RoomieSyncAI",
+    name: "RoomieManager",
     tagline: "AI roommate manager for chores, bills, and the small stuff.",
     year: "2026",
     role: "Founder · Full-stack",
@@ -48,7 +48,7 @@ export const projectsData = [
     ],
     code: "",
     demo: "",
-    image: "/image/projects/roomiesyncai.png",
+    image: "/image/projects/roomiemanager.png",
   },
   {
     id: 3,
