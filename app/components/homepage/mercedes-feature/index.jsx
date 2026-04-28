@@ -7,7 +7,7 @@ import {
   useMotionTemplate,
   useReducedMotion,
 } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Mercedes-Benz feature with a scroll-pinned roll-in.
@@ -22,8 +22,26 @@ import { useRef } from "react";
  * pinned, which plays nicely with Lenis smooth scrolling.
  */
 export default function MercedesFeature() {
-  const ref = useRef(null);
   const reduced = useReducedMotion();
+  const [isLgUp, setIsLgUp] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const sync = () => setIsLgUp(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  if (reduced || !isLgUp) {
+    return <StaticMercedesFeature />;
+  }
+
+  return <PinnedMercedesFeature />;
+}
+
+function PinnedMercedesFeature() {
+  const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -82,46 +100,6 @@ export default function MercedesFeature() {
     [0.8, 0.88, 0.96, 1],
     [0, 1, 1, 0]
   );
-
-  // Reduced-motion: render a static, fully-formed star without the pin.
-  if (reduced) {
-    return (
-      <section
-        className="bleed mercedes-scene relative my-24 lg:my-36"
-        aria-label="Featured: Mercedes-Benz USA internship — Summer 2026"
-      >
-        <span className="chrome-rail top-0 left-0 right-0" />
-        <span className="chrome-rail bottom-0 left-0 right-0" />
-        <div className="mercedes-stage">
-          <div className="mercedes-copy">
-            <p className="mono text-[10px] tracking-[0.32em] uppercase text-[var(--chrome-2)] mb-6">
-              ◆ Featured · Summer 2026
-            </p>
-            <h2 className="mercedes-title chrome-text">
-              <span className="block">Joining</span>
-              <span className="block editorial-italic">@ Mercedes-Benz</span>
-              <span className="block">USA</span>
-            </h2>
-            <div className="mt-8 lg:mt-10">
-              <MercedesMeta />
-            </div>
-          </div>
-          <div className="mercedes-stage-logo">
-            <div aria-hidden className="mercedes-star">
-              <img
-                src="/mercedes-logo.png"
-                alt=""
-                draggable={false}
-                width={1024}
-                height={1024}
-                className="mercedes-logo-img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section
@@ -259,6 +237,45 @@ export default function MercedesFeature() {
             Scroll · continue
           </motion.p>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function StaticMercedesFeature() {
+  return (
+    <section
+      className="bleed mercedes-scene relative my-24 lg:my-36"
+      aria-label="Featured: Mercedes-Benz USA internship — Summer 2026"
+    >
+      <span className="chrome-rail top-0 left-0 right-0" />
+      <span className="chrome-rail bottom-0 left-0 right-0" />
+      <div className="mercedes-stage">
+        <div className="mercedes-copy">
+          <p className="mono text-[10px] tracking-[0.32em] uppercase text-[var(--chrome-2)] mb-6">
+            ◆ Featured · Summer 2026
+          </p>
+          <h2 className="mercedes-title chrome-text">
+            <span className="block">Joining</span>
+            <span className="block editorial-italic">@ Mercedes-Benz</span>
+            <span className="block">USA</span>
+          </h2>
+          <div className="mt-8 lg:mt-10">
+            <MercedesMeta />
+          </div>
+        </div>
+        <div className="mercedes-stage-logo">
+          <div aria-hidden className="mercedes-star">
+            <img
+              src="/mercedes-logo.png"
+              alt=""
+              draggable={false}
+              width={1024}
+              height={1024}
+              className="mercedes-logo-img"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

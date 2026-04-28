@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col gap-4">
             <Link
               href={`mailto:${personalData.email}`}
-              className="text-2xl lg:text-3xl editorial text-[var(--ink)] hover:text-[var(--amber-deep)] transition-colors no-underline"
+              className="inline-flex min-h-11 items-center text-2xl lg:text-3xl editorial text-[var(--ink)] hover:text-[var(--amber-deep)] transition-colors no-underline"
             >
               {personalData.email}
             </Link>

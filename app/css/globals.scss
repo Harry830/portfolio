@@ -53,6 +53,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -61,7 +63,24 @@ body {
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
   letter-spacing: -0.005em;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Keep fixed navbar from covering anchored sections when jumped to via
+   /#work, /#experience, /#contact, etc. */
+#work,
+#experience,
+#contact,
+#about {
+  scroll-margin-top: 80px;
 }
 
 /* Subtle paper grain across the whole page */
@@ -512,6 +531,7 @@ main {
 .marquee-strip {
   display: flex;
   overflow: hidden;
+  contain: layout paint;
   border-block: 1px solid var(--line);
   background: var(--paper);
   padding: 0.6rem 0;
@@ -770,6 +790,20 @@ main {
   height: 64vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Tablet & mobile: the same component renders inside the stacked vertical
+   list, so it should fill the column and grow to fit content rather than
+   pinning to a fixed horizontal-track height. */
+@media (max-width: 1023px) {
+  .hwork-tile {
+    width: 100%;
+    height: auto;
+  }
+  .hwork-tile .hwork-plate {
+    aspect-ratio: 16 / 10;
+    flex: 0 0 auto;
+  }
 }
 
 .hwork-intro {

@@ -13,7 +13,7 @@ const ROLE_TITLES = [
   "Mercedes-Benz USA",
   "CreateX",
   "Genesis Spring Batch",
-  "AI · Cloud · Enterprise",
+  "AI · Cloud Enterprise",
   "Atlanta, GA",
 ];
 

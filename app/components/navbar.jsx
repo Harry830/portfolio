@@ -61,19 +61,24 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        backgroundColor: scrolled ? "rgba(246, 242, 234, 0.78)" : "transparent",
-        backdropFilter: scrolled ? "blur(14px) saturate(120%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(14px) saturate(120%)" : "none",
-        borderBottom: scrolled
-          ? "1px solid rgba(22, 22, 26, 0.06)"
-          : "1px solid transparent",
+        backgroundColor: open
+          ? "var(--paper)"
+          : scrolled
+          ? "rgba(246, 242, 234, 0.78)"
+          : "transparent",
+        backdropFilter: scrolled && !open ? "blur(14px) saturate(120%)" : "none",
+        WebkitBackdropFilter: scrolled && !open ? "blur(14px) saturate(120%)" : "none",
+        borderBottom:
+          scrolled || open
+            ? "1px solid rgba(22, 22, 26, 0.06)"
+            : "1px solid transparent",
       }}
     >
       <div className="mx-auto w-full max-w-[88rem] px-5 sm:px-8 lg:px-12">
         <nav className="flex items-center justify-between py-4 lg:py-5">
           <Link
             href="/"
-            className="group flex items-baseline gap-2 no-underline"
+            className="group flex items-baseline gap-2 py-2 -my-2 no-underline"
             aria-label="Hardik Saini — Home"
           >
             <span className="editorial text-[1.55rem] leading-none text-[var(--ink)] tracking-tight">
@@ -141,23 +146,24 @@ export default function Navbar() {
           id="mobile-nav"
           className="md:hidden overflow-hidden transition-[max-height,opacity] duration-500"
           style={{
-            maxHeight: open ? "420px" : "0px",
+            maxHeight: open ? "480px" : "0px",
             opacity: open ? 1 : 0,
           }}
+          aria-hidden={!open}
         >
-          <ul className="flex flex-col gap-1 pb-5">
+          <ul className="flex flex-col pt-1 pb-6 border-t border-[var(--line-soft)]">
             {NAV.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-base font-medium text-[var(--ink-soft)] hover:text-[var(--ink)] no-underline"
+                  className="block py-4 text-[1.05rem] font-medium text-[var(--ink-soft)] hover:text-[var(--ink)] no-underline border-b border-[var(--line-soft)]"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-3">
+            <li className="pt-5">
               <Link
                 href="/#contact"
                 onClick={() => setOpen(false)}
