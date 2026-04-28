@@ -88,17 +88,17 @@ export default function MercedesFeature() {
     return (
       <section
         className="bleed mercedes-scene relative my-24 lg:my-36"
-        aria-label="Featured: Mercedes-Benz USA internship"
+        aria-label="Featured: Mercedes-Benz USA internship — Summer 2026"
       >
         <span className="chrome-rail top-0 left-0 right-0" />
         <span className="chrome-rail bottom-0 left-0 right-0" />
         <div className="mercedes-stage">
           <div className="mercedes-copy">
             <p className="mono text-[10px] tracking-[0.32em] uppercase text-[var(--chrome-2)] mb-6">
-              ◆ Featured · Now
+              ◆ Featured · Summer 2026
             </p>
             <h2 className="mercedes-title chrome-text">
-              <span className="block">Interning</span>
+              <span className="block">Joining</span>
               <span className="block editorial-italic">@ Mercedes-Benz</span>
               <span className="block">USA</span>
             </h2>
@@ -127,7 +127,7 @@ export default function MercedesFeature() {
     <section
       ref={ref}
       className="bleed mercedes-pin"
-      aria-label="Featured: Mercedes-Benz USA internship"
+      aria-label="Featured: Mercedes-Benz USA internship — Summer 2026"
       style={{
         position: "relative",
         height: "280vh",
@@ -182,7 +182,7 @@ export default function MercedesFeature() {
         <div className="mercedes-stage">
           <div className="mercedes-copy">
             <p className="mono text-[10px] tracking-[0.32em] uppercase text-[var(--chrome-2)] mb-6">
-              ◆ Featured · Now
+              ◆ Featured · Summer 2026
             </p>
 
             <motion.h2
@@ -192,7 +192,7 @@ export default function MercedesFeature() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="mercedes-title chrome-text"
             >
-              <span className="block">Interning</span>
+              <span className="block">Joining</span>
               <span className="block editorial-italic">@ Mercedes-Benz</span>
               <span className="block">USA</span>
             </motion.h2>

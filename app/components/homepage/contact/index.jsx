@@ -24,7 +24,6 @@ export default function ContactSection() {
       id="contact"
       ref={ref}
       className="relative my-28 lg:my-40 pb-12"
-      data-cursor-hover
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 lg:mb-14">
         <div className="lg:col-span-7">

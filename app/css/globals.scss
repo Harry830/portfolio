@@ -426,53 +426,6 @@ main {
 }
 
 /* =====================================================================
-   Custom cursor — only on fine-pointer devices
-   ===================================================================== */
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0;
-  will-change: transform, opacity;
-  mix-blend-mode: multiply;
-  transition: opacity 220ms ease;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--ink);
-}
-
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--ink-soft);
-  background: rgba(22, 22, 26, 0.04);
-  transition: opacity 220ms ease, border-color 220ms ease, background-color 220ms ease;
-}
-
-.cursor-ring.is-hover {
-  border-color: var(--amber-deep);
-  background: rgba(200, 132, 61, 0.18);
-}
-
-@media (pointer: fine) {
-  html.cursor-on,
-  html.cursor-on body,
-  html.cursor-on a,
-  html.cursor-on button,
-  html.cursor-on [data-cursor-hover] {
-    cursor: none;
-  }
-}
-
-/* =====================================================================
    Preloader
    ===================================================================== */
 .preloader {
@@ -930,4 +883,151 @@ main {
 
 .contact-email:hover .contact-email-arrow {
   transform: translate(0.15em, -0.35em);
+}
+
+/* =====================================================================
+   Experience: ambient morph blob behind featured card
+   ===================================================================== */
+@keyframes experience-morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(2%, -2%) rotate(8deg);
+  }
+  50% {
+    border-radius: 50% 50% 30% 70% / 30% 60% 40% 70%;
+    transform: translate(-2%, 2%) rotate(-6deg);
+  }
+  75% {
+    border-radius: 70% 30% 50% 50% / 40% 70% 30% 60%;
+    transform: translate(1%, 1%) rotate(4deg);
+  }
+  100% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 60% 40%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.exp-morph-blob {
+  animation: experience-morph 14s ease-in-out infinite alternate;
+}
+
+/* Comet conic halo — rotating colored ring behind the rail comet head */
+@keyframes experience-comet-spin {
+  to { transform: rotate(360deg); }
+}
+
+.exp-comet-halo {
+  position: absolute;
+  inset: -14px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(200, 132, 61, 0.0) 40deg,
+    rgba(200, 132, 61, 0.55) 120deg,
+    rgba(231, 178, 122, 0.85) 180deg,
+    rgba(200, 132, 61, 0.55) 240deg,
+    rgba(200, 132, 61, 0.0) 320deg,
+    transparent 360deg
+  );
+  filter: blur(6px);
+  opacity: 0.85;
+  animation: experience-comet-spin 3.4s linear infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Featured card — animated micro grain texture */
+@keyframes experience-grain-shift {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-3%, 2%); }
+  40%  { transform: translate(2%, -3%); }
+  60%  { transform: translate(-2%, -2%); }
+  80%  { transform: translate(3%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+.exp-grain {
+  position: absolute;
+  inset: -10%;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 1px;
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+  animation: experience-grain-shift 6s steps(8, end) infinite;
+  pointer-events: none;
+}
+
+/* Floating ambient particles drifting through the section */
+@keyframes experience-particle-a {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { transform: translate3d(20px, -120px, 0); opacity: 0.7; }
+  90%  { opacity: 1; }
+  100% { transform: translate3d(-10px, -240px, 0); opacity: 0; }
+}
+@keyframes experience-particle-b {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  15%  { opacity: 1; }
+  50%  { transform: translate3d(-30px, -160px, 0); opacity: 0.6; }
+  85%  { opacity: 1; }
+  100% { transform: translate3d(15px, -300px, 0); opacity: 0; }
+}
+@keyframes experience-particle-c {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: 0.9; }
+  50%  { transform: translate3d(40px, -100px, 0); opacity: 0.5; }
+  90%  { opacity: 0.8; }
+  100% { transform: translate3d(0px, -220px, 0); opacity: 0; }
+}
+
+.exp-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, var(--amber) 0%, rgba(200,132,61,0.4) 50%, transparent 80%);
+  filter: blur(0.4px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Card SVG corner brackets — drawn-in via stroke-dashoffset */
+@keyframes experience-bracket-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.exp-bracket {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  stroke: var(--amber-deep);
+  stroke-width: 1.25;
+  fill: none;
+}
+
+.exp-bracket path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: experience-bracket-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.55s;
+}
+
+.exp-bracket--featured { stroke: var(--chrome-1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-morph-blob,
+  .exp-comet-halo,
+  .exp-grain,
+  .exp-particle { animation: none; }
+  .exp-bracket path { stroke-dashoffset: 0; animation: none; }
 }

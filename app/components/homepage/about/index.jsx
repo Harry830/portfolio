@@ -4,7 +4,7 @@ import { personalData } from "@/utils/data/personal-data";
 const FACTS = [
   { k: "Based in", v: "Atlanta, GA" },
   { k: "Studying", v: "BS Computer Science · Honors" },
-  { k: "GPA", v: "4.28 / 4.30" },
+  { k: "GPA", v: "4.25 / 4.30" },
   { k: "Now", v: "ARCTIC HPC + MBUSA + CreateX" },
 ];
 
@@ -27,6 +27,20 @@ export default function AboutSection() {
                 />
               </div>
             </div>
+
+            {/* GPA accolade pill — top-right of the photo frame */}
+            <span
+              aria-hidden
+              className="surface-paper absolute -top-3 -right-3 sm:-top-4 sm:-right-4 px-3.5 py-2 mono text-[10px] uppercase tracking-[0.18em] text-[var(--ink-soft)] inline-flex items-center gap-2 rounded-full whitespace-nowrap"
+            >
+              <span className="text-[var(--amber-deep)]">◆</span>
+              <span>GPA</span>
+              <span className="text-[var(--ink-faint)]">·</span>
+              <span>4.25 / 4.30</span>
+              <span className="text-[var(--ink-faint)]">·</span>
+              <span>Honors</span>
+            </span>
+
             {/* signature accent */}
             <span
               aria-hidden

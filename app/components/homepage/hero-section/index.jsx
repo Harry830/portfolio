@@ -9,7 +9,7 @@ import Magnetic from "@/app/components/effects/magnetic";
 const PILLARS = [
   { k: "01", v: "CS @ Georgia State" },
   { k: "02", v: "ARCTIC HPC team" },
-  { k: "03", v: "Mercedes-Benz USA intern" },
+  { k: "03", v: "Mercedes-Benz USA · Summer '26" },
   { k: "04", v: "Startup builder" },
 ];
 
@@ -256,9 +256,9 @@ export default function HeroSection() {
         <div className="lg:col-span-7">
           <p className="text-lg lg:text-xl text-[var(--ink-muted)] leading-relaxed max-w-2xl">
             I turn messy real-world workflows into systems people actually want
-            to use — currently building enterprise tooling at{" "}
-            <span className="text-[var(--ink)] font-medium">Mercedes-Benz USA</span>
-            , operating research HPC with{" "}
+            to use — joining{" "}
+            <span className="text-[var(--ink)] font-medium">Mercedes-Benz USA</span>{" "}
+            this summer as an SAP &amp; Innovation intern, operating research HPC with{" "}
             <span className="text-[var(--ink)] font-medium">GSU&apos;s ARCTIC team</span>
             , and shipping startup ideas through{" "}
             <span className="text-[var(--ink)] font-medium">CreateX</span>.
@@ -303,8 +303,8 @@ export default function HeroSection() {
       >
         <span>scroll</span>
         <motion.span
-          className="block h-px w-10 bg-[var(--ink-faint)]"
-          animate={{ scaleX: [1, 1.6, 1], transformOrigin: "left" }}
+          className="block h-px w-10 bg-[var(--ink-faint)] origin-left"
+          animate={{ scaleX: [1, 1.6, 1] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         />
       </motion.div>

@@ -28,7 +28,6 @@ export default function ProjectTile({ project, index }) {
       className="hwork-tile group"
       onPointerEnter={() => setHover(true)}
       onPointerLeave={() => setHover(false)}
-      data-cursor-hover
     >
       {/* hero plate with image or gradient fallback */}
       <div

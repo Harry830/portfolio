@@ -3,7 +3,7 @@ export const personalData = {
   firstName: "Hardik",
   lastName: "Saini",
   profile: "/profile.jpg",
-  designation: "CS @ Georgia State · ARCTIC HPC · Mercedes-Benz USA Intern",
+  designation: "CS @ Georgia State · ARCTIC HPC · Incoming Mercedes-Benz USA Intern",
   shortBio:
     "I build practical AI, cloud, and enterprise tools that turn messy workflows into usable systems.",
   description:

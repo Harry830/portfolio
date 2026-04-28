@@ -3,13 +3,7 @@ import MarqueeStrip from "./components/effects/marquee-strip";
 import MercedesFeature from "./components/homepage/mercedes-feature";
 import HorizontalWork from "./components/homepage/horizontal-work";
 import Experience from "./components/homepage/experience";
-import Programs from "./components/homepage/programs";
-import AboutSection from "./components/homepage/about";
-import Skills from "./components/homepage/skills";
-import Awards from "./components/homepage/awards";
-import Coursework from "./components/homepage/coursework";
-import Education from "./components/homepage/education";
-import ProfessionalDevelopment from "./components/homepage/professional-development";
+import LearnMoreCTA from "./components/homepage/learn-more-cta";
 import ContactSection from "./components/homepage/contact";
 
 const ROLE_TITLES = [
@@ -37,14 +31,7 @@ export default function Home() {
       <HorizontalWork />
 
       <Experience />
-      <Programs />
-      <AboutSection />
-
-      <Skills />
-      <Awards />
-      <Coursework />
-      <Education />
-      <ProfessionalDevelopment />
+      <LearnMoreCTA />
       <ContactSection />
     </div>
   );

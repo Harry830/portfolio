@@ -129,9 +129,11 @@ function HackathonsCard({ section }) {
             <li
               key={`${section.title}-${item.name}`}
               className={[
-                "grid grid-cols-[6.5rem_1fr_auto] sm:grid-cols-[8rem_1fr_auto] items-center gap-3 sm:gap-5 py-4 last:pb-0 first:pt-0",
-                i === 0 ? "" : "border-t border-[var(--line-soft)]",
-                isWinner ? "rounded-xl bg-[var(--amber-tint)] -mx-3 px-3 my-1 border-t-0 shadow-[0_8px_30px_-20px_rgba(162,100,37,0.5)]" : "",
+                "grid grid-cols-[6.5rem_1fr_auto] sm:grid-cols-[8rem_1fr_auto] items-center gap-3 sm:gap-5 -mx-3 px-3",
+                isWinner
+                  ? "py-4 my-1 rounded-xl bg-[var(--amber-tint)] shadow-[0_8px_30px_-20px_rgba(162,100,37,0.5)]"
+                  : "py-4 first:pt-0 last:pb-0",
+                i === 0 || isWinner ? "" : "border-t border-[var(--line-soft)]",
               ].join(" ")}
             >
               {/* timeline / year column */}

@@ -7,7 +7,7 @@ export default function Education() {
         <div className="lg:col-span-7">
           <p className="eyebrow">Education</p>
           <h2 className="mt-4 display-lg text-[var(--ink)]">
-            Coursework &amp; <span className="editorial-italic text-[var(--amber-deep)]">credentials</span>.
+            Education &amp; <span className="editorial-italic text-[var(--amber-deep)]">credentials</span>.
           </h2>
         </div>
       </header>

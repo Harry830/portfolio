@@ -1,17 +1,17 @@
 export const experiences = [
   {
     id: 1,
-    title: "SAP & Innovation Intern",
+    title: "Incoming SAP & Innovation Intern",
     company: "Mercedes-Benz USA",
     location: "Atlanta, GA",
-    duration: "Summer 2026",
+    duration: "Summer 2026 · Incoming",
     isFeatured: true,
     summary:
-      "Joining MBUSA's SAP & Innovation team to support enterprise systems and process modernization across operations.",
+      "Joining MBUSA's SAP & Innovation team this summer to track SAP migration across business units and help implement innovation initiatives across departments.",
     bullets: [
-      "Working alongside the SAP & Innovation team on enterprise platform initiatives at Mercedes-Benz USA HQ.",
-      "Focus areas: enterprise integrations, internal tooling, and workflow automation that scales across business units.",
-      "Bridging engineering rigor with operational reality in a global automotive enterprise.",
+      "Will track SAP migration efforts across teams at Mercedes-Benz USA HQ — coordinating timelines, dependencies, and rollout readiness.",
+      "Will support innovation initiatives across departments — process modernization, internal tooling, and workflow automation that scales across business units.",
+      "Bridging engineering rigor with operational reality at a global automotive enterprise.",
     ],
   },
   {

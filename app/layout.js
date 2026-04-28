@@ -8,10 +8,8 @@ import Reveal from "./components/helper/reveal";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import SmoothScroll from "./components/providers/smooth-scroll";
-import Cursor from "./components/effects/cursor";
 import Preloader from "./components/effects/preloader";
 import ScrollProgress from "./components/effects/scroll-progress";
-import "./css/card.scss";
 import "./css/globals.scss";
 
 const inter = Inter({
@@ -28,9 +26,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata = {
-  title: "Hardik Saini — CS @ GSU · Mercedes-Benz USA · ARCTIC HPC",
+  title: "Hardik Saini — CS @ GSU · ARCTIC HPC · Incoming MBUSA Intern",
   description:
-    "Hardik Saini is a CS junior at Georgia State, ARCTIC HPC team member, and Mercedes-Benz USA intern. I build practical AI, cloud, and enterprise tools.",
+    "Hardik Saini is a CS junior at Georgia State, ARCTIC HPC team member, and incoming Mercedes-Benz USA SAP & Innovation intern (Summer 2026). I build practical AI, cloud, and enterprise tools.",
   metadataBase: new URL("https://hardiksaini.com"),
   openGraph: {
     title: "Hardik Saini — Builder",
@@ -46,7 +44,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Preloader />
         <SmoothScroll />
-        <Cursor />
         <ScrollProgress />
         <ToastContainer position="bottom-right" theme="light" />
         <Reveal />

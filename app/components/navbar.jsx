@@ -1,17 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
-  { href: "#programs", label: "Programs" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -23,13 +24,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Section-aware highlighting
+  // Section-aware highlighting (homepage only)
   useEffect(() => {
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-            setActiveSection(`#${entry.target.id}`);
+            setActiveSection(`/#${entry.target.id}`);
           }
         });
       },
@@ -37,12 +43,19 @@ export default function Navbar() {
     );
 
     NAV.forEach(({ href }) => {
-      const el = document.querySelector(href);
+      const hashIdx = href.indexOf("#");
+      if (hashIdx === -1) return;
+      const el = document.querySelector(href.slice(hashIdx));
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
+
+  const isActive = (href) => {
+    if (href === "/about") return pathname === "/about";
+    return pathname === "/" && activeSection === href;
+  };
 
   return (
     <header
@@ -78,7 +91,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={`relative px-3 py-2 text-sm font-medium transition-colors no-underline ${
-                    activeSection === item.href
+                    isActive(item.href)
                       ? "text-[var(--ink)]"
                       : "text-[var(--ink-soft)] hover:text-[var(--ink)]"
                   }`}
@@ -87,14 +100,14 @@ export default function Navbar() {
                   <span
                     className="pointer-events-none absolute left-3 right-3 -bottom-0.5 h-px bg-[var(--amber-deep)] transition-transform duration-500 origin-left"
                     style={{
-                      transform: activeSection === item.href ? "scaleX(1)" : "scaleX(0)",
+                      transform: isActive(item.href) ? "scaleX(1)" : "scaleX(0)",
                     }}
                   />
                 </Link>
               </li>
             ))}
             <li className="ml-3">
-              <Link href="#contact" className="btn-primary text-xs no-underline">
+              <Link href="/#contact" className="btn-primary text-xs no-underline">
                 Let's talk
                 <span aria-hidden>↗</span>
               </Link>
@@ -146,7 +159,7 @@ export default function Navbar() {
             ))}
             <li className="pt-3">
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="btn-primary no-underline"
               >
