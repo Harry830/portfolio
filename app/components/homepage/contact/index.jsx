@@ -99,7 +99,7 @@ export default function ContactSection() {
           <button
             type="button"
             onClick={() => setShowForm((v) => !v)}
-            className="mt-3 inline-flex items-center gap-2 text-base text-[var(--ink)] hover:text-[var(--amber-deep)] transition-colors"
+            className="mt-3 inline-flex min-h-11 items-center gap-2 px-1 text-base text-[var(--ink)] hover:text-[var(--amber-deep)] transition-colors"
           >
             {showForm ? "Hide message form" : "Send a message"}
             <span aria-hidden>{showForm ? "↑" : "↓"}</span>

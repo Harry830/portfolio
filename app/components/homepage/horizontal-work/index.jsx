@@ -49,12 +49,11 @@ export default function HorizontalWork() {
   const progressBar = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <>
-      {/* Desktop: pinned horizontal scroller */}
-      <section
-        id="work"
+    <section id="work" aria-label="Selected work">
+      {/* Desktop (lg+): pinned horizontal scroller */}
+      <div
         ref={ref}
-        className="relative hidden md:block"
+        className="relative hidden lg:block"
         style={{ height: `${(tiles + 1) * 75}vh` }}
       >
         <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-32 lg:pt-40 pb-20">
@@ -119,25 +118,23 @@ export default function HorizontalWork() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Mobile: vertical stacked cards */}
-      <section id="work" className="md:hidden my-20">
-        <div className="mb-12">
+      {/* Tablet & mobile (<lg): vertical stacked cards */}
+      <div className="lg:hidden my-16 sm:my-20">
+        <div className="mb-10">
           <p className="eyebrow">Selected Work</p>
           <h2 className="display-lg mt-2 text-[var(--ink)]">
             Things I&apos;ve <span className="editorial-italic text-[var(--amber-deep)]">shipped</span>.
           </h2>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-10 sm:space-y-12">
           {projectsData.map((project, i) => (
-            <div key={project.id} className="hwork-tile" style={{ height: "auto" }}>
-              <ProjectTile project={project} index={i} />
-            </div>
+            <ProjectTile key={project.id} project={project} index={i} />
           ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
