@@ -1,88 +1,53 @@
-// @flow strict
-
-import { awards } from "@/utils/data/awards";
-import Image from "next/image";
 import Link from "next/link";
-import lottieFile from "../../../assets/lottie/development.json";
-import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
+import { awards } from "@/utils/data/awards";
 
-function Awards() {
+export default function Awards() {
   return (
-    <div id="awards" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <Image
-        src="/section.svg"
-        alt="Section"
-        width={1572}
-        height={795}
-        className="absolute top-0 -z-10"
-      />
-
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Awards & Recognition
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+    <section id="awards" className="relative my-20 lg:my-28">
+      <header className="reveal reveal-up mb-10 lg:mb-14 grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">Recognition</p>
+          <h2 className="mt-4 display-lg text-[var(--ink)]">
+            Awards &amp; <span className="editorial-italic text-[var(--amber-deep)]">scholarships</span>.
+          </h2>
         </div>
-      </div>
+      </header>
 
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-3/4 h-3/4">
-              <AnimationLottie animationPath={lottieFile} />
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7">
+        {awards.map((a) => (
+          <li
+            key={a.id}
+            className="reveal reveal-up surface-paper lift p-6 lg:p-7"
+          >
+            <div className="flex items-baseline justify-between gap-3">
+              <p className="mono text-[10px] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+                {a.date || a.issuer || "—"}
+              </p>
+              {a.link ? (
+                <Link
+                  href={a.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs text-[var(--amber-deep)] hover:underline no-underline"
+                >
+                  View ↗
+                </Link>
+              ) : null}
             </div>
-          </div>
-
-          <div>
-            <div className="flex flex-col gap-6">
-              {awards.map((award) => (
-                <GlowCard key={award.id} identifier={`award-${award.id}`}>
-                  <div className="p-3 relative text-white">
-                    <Image
-                      src="/blur-23.svg"
-                      alt="Glow"
-                      width={1080}
-                      height={200}
-                      className="absolute bottom-0 opacity-80"
-                    />
-                    <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#16f2b3]">
-                        {award.date}
-                      </p>
-                    </div>
-                    <div className="flex flex-col gap-1 px-3 py-5">
-                      <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                        {award.title}
-                      </p>
-                      <p className="text-sm sm:text-base text-[#cdd5f7]">
-                        {award.issuer}
-                      </p>
-                      <p className="text-sm sm:text-base text-gray-200">
-                        {award.description}
-                      </p>
-                      {award.link && (
-                        <a
-                          className="relative z-10 text-sm text-[#16f2b3] underline underline-offset-4 hover:text-pink-400 transition-colors"
-                          href={award.link}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          View credential
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </GlowCard>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <h3 className="mt-3 text-xl lg:text-2xl editorial text-[var(--ink)] leading-tight">
+              {a.title}
+            </h3>
+            {a.issuer && a.date ? (
+              <p className="mt-1 text-sm text-[var(--amber-deep)]">{a.issuer}</p>
+            ) : null}
+            {a.description ? (
+              <p className="mt-3 text-[15px] text-[var(--ink-muted)] leading-relaxed">
+                {a.description}
+              </p>
+            ) : null}
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
-
-export default Awards;

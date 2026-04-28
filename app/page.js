@@ -1,28 +1,38 @@
-import AboutSection from "./components/homepage/about";
-import ContactSection from "./components/homepage/contact";
-import Coursework from "./components/homepage/coursework";
-import Education from "./components/homepage/education";
-import Experience from "./components/homepage/experience";
 import HeroSection from "./components/homepage/hero-section";
-import Awards from "./components/homepage/awards";
-import Projects from "./components/homepage/projects";
-import Skills from "./components/homepage/skills";
-import ProfessionalDevelopment from "./components/homepage/professional-development";
+import MarqueeStrip from "./components/effects/marquee-strip";
+import MercedesFeature from "./components/homepage/mercedes-feature";
+import HorizontalWork from "./components/homepage/horizontal-work";
+import Experience from "./components/homepage/experience";
+import LearnMoreCTA from "./components/homepage/learn-more-cta";
+import ContactSection from "./components/homepage/contact";
 
-export default async function Home() {
+const ROLE_TITLES = [
+  "Builder",
+  "CS @ Georgia State",
+  "ARCTIC HPC",
+  "Mercedes-Benz USA",
+  "CreateX",
+  "Genesis Spring Batch",
+  "AI · Cloud · Enterprise",
+  "Atlanta, GA",
+];
 
+export default function Home() {
   return (
-    <div suppressHydrationWarning >
+    <div suppressHydrationWarning>
       <HeroSection />
-      <AboutSection />
+
+      <div className="bleed my-12 lg:my-16">
+        <MarqueeStrip items={ROLE_TITLES} direction="left" speed={42} variant="display" />
+      </div>
+
+      <MercedesFeature />
+
+      <HorizontalWork />
+
       <Experience />
-      <Skills />
-      <Coursework />
-      <Awards />
-      <Projects />
-      <Education />
-      <ProfessionalDevelopment />
+      <LearnMoreCTA />
       <ContactSection />
     </div>
-  )
-};
+  );
+}

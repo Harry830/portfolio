@@ -1,55 +1,87 @@
-// @flow strict
-
-import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
+import { personalData } from "@/utils/data/personal-data";
 
+const FACTS = [
+  { k: "Based in", v: "Atlanta, GA" },
+  { k: "Studying", v: "BS Computer Science · Honors" },
+  { k: "GPA", v: "4.25 / 4.30" },
+  { k: "Now", v: "ARCTIC HPC + MBUSA + CreateX" },
+];
 
-function AboutSection() {
+export default function AboutSection() {
   return (
-    <div id="about" className="my-12 lg:my-16 relative">
-      <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          ABOUT ME
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-        <div className="order-2 lg:order-1">
-          <p className="font-medium mb-5 text-[#16f2b3] text-xl">
-            About Me
-          </p>
-          <p className="text-gray-200 text-sm lg:text-lg">
-            {personalData.description}
-          </p>
-        </div>
-        <div className="flex justify-center order-1 lg:order-2">
-          <div className="group relative">
-            <div
-              className="pointer-events-none absolute -inset-8 rounded-[30px] bg-[radial-gradient(circle_at_30%_30%,rgba(246,38,175,0.35),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(22,242,179,0.35),transparent_55%)] opacity-70 blur-3xl transition duration-700 group-hover:opacity-95 group-hover:blur-[52px]"
-              aria-hidden="true"
-            ></div>
-            <div
-              className="pointer-events-none absolute -inset-4 rounded-[28px] bg-[conic-gradient(from_120deg,rgba(168,85,247,0.4),rgba(236,72,153,0.35),rgba(34,211,238,0.35),rgba(168,85,247,0.4))] opacity-60 blur-2xl transition duration-500 group-hover:scale-105 group-hover:opacity-80 group-hover:blur-[42px]"
-              aria-hidden="true"
-            ></div>
-            <div className="relative rounded-[22px] bg-[#0b0f24] p-[3px] shadow-[0_0_32px_rgba(168,85,247,0.38)] transition duration-500 group-hover:shadow-[0_22px_70px_rgba(236,72,153,0.55)]">
-              <div className="relative rounded-[18px] bg-gradient-to-br from-pink-500/70 via-[#0f1024] to-teal-300/60 p-[3px] transform-gpu transition duration-700 ease-out group-hover:-translate-y-3 group-hover:translate-x-2 group-hover:rotate-[1.5deg] group-hover:scale-110">
-                <div className="rounded-[15px] bg-[#060814] p-[2px] shadow-[0_12px_42px_rgba(0,0,0,0.45)]">
-                  <Image
-                    src={personalData.profile}
-                    width={272}
-                    height={272}
-                    alt="Hardik Saini"
-                    className="rounded-[14px] transition-all duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
+    <section id="about" className="relative my-20 lg:my-28">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        {/* Left: portrait + facts */}
+        <div className="reveal reveal-up lg:col-span-5">
+          <div className="relative w-full max-w-md">
+            <div className="surface-paper p-2 lg:p-2.5">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[14px] bg-[var(--bg-cream-warm)]">
+                <Image
+                  src={personalData.profile}
+                  alt={`Portrait of ${personalData.name}`}
+                  fill
+                  sizes="(min-width: 1024px) 420px, 80vw"
+                  className="object-cover"
+                  priority={false}
+                />
               </div>
             </div>
+
+            {/* GPA accolade pill — top-right of the photo frame */}
+            <span
+              aria-hidden
+              className="surface-paper absolute -top-3 -right-3 sm:-top-4 sm:-right-4 px-3.5 py-2 mono text-[10px] uppercase tracking-[0.18em] text-[var(--ink-soft)] inline-flex items-center gap-2 rounded-full whitespace-nowrap"
+            >
+              <span className="text-[var(--amber-deep)]">◆</span>
+              <span>GPA</span>
+              <span className="text-[var(--ink-faint)]">·</span>
+              <span>4.25 / 4.30</span>
+              <span className="text-[var(--ink-faint)]">·</span>
+              <span>Honors</span>
+            </span>
+
+            {/* signature accent */}
+            <span
+              aria-hidden
+              className="absolute -bottom-3 -right-3 px-4 py-2 bg-[var(--ink)] text-[var(--paper)] mono text-[10px] uppercase tracking-[0.22em] rounded-full"
+            >
+              Hardik · 2026
+            </span>
+          </div>
+
+          <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4">
+            {FACTS.map((f) => (
+              <div key={f.k} className="border-t border-[var(--line)] pt-3">
+                <dt className="mono text-[10px] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+                  {f.k}
+                </dt>
+                <dd className="mt-1 text-sm text-[var(--ink-soft)]">{f.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        {/* Right: about copy */}
+        <div className="reveal reveal-up delay-160 lg:col-span-7 lg:pt-6">
+          <p className="eyebrow">About</p>
+          <h2 className="mt-4 display-lg text-[var(--ink)]">
+            I prefer <span className="editorial-italic text-[var(--amber-deep)]">building</span> over talking.
+          </h2>
+          <div className="mt-6 space-y-5 text-[var(--ink-muted)] text-base lg:text-lg leading-[1.75] max-w-2xl">
+            <p>{personalData.description}</p>
+            <p>
+              I&apos;m drawn to problems that sit at the boundary of software and
+              infrastructure — the messy seam where the system breaks under real
+              usage. That&apos;s where I do my best work.
+            </p>
+            <p>
+              When I&apos;m not building, I&apos;m at the gym, watching cricket, or
+              tearing apart hardware to see how it works.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default AboutSection;
+}

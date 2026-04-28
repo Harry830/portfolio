@@ -1,89 +1,124 @@
-// @flow strict
-import { personalData } from '@/utils/data/personal-data';
-import Link from 'next/link';
-import { BiLogoLinkedin } from "react-icons/bi";
-import { CiLocationOn } from "react-icons/ci";
-import { FaFacebook, FaStackOverflow } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoGithub, IoMdCall } from "react-icons/io";
-import { MdAlternateEmail } from "react-icons/md";
-import ContactForm from './contact-form';
+"use client";
 
-function ContactSection() {
+import { useState, useRef } from "react";
+import Link from "next/link";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { personalData } from "@/utils/data/personal-data";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+import Magnetic from "@/app/components/effects/magnetic";
+import ContactForm from "./contact-form";
+
+export default function ContactSection() {
+  const [showForm, setShowForm] = useState(false);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // The huge email tracks scroll subtly
+  const yEmail = useTransform(scrollYProgress, [0, 1], [60, -60]);
+
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+    <section
+      id="contact"
+      ref={ref}
+      className="relative my-28 lg:my-40 pb-12"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 lg:mb-14">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">◆ Closing</p>
+          <h2 className="mt-4 display-xl text-[var(--ink)]">
+            Let&apos;s build <span className="editorial-italic text-[var(--amber-deep)]">something</span>.
+          </h2>
+        </div>
+        <p className="lg:col-span-5 text-base lg:text-lg text-[var(--ink-muted)] leading-relaxed lg:pt-6">
+          Open to internships, full-time conversations starting 2027, and
+          serious side-projects. Reach out — I respond fast.
+        </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <ContactForm />
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <MdAlternateEmail
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>{personalData.email}</span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <IoMdCall
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.phone}
-              </span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <CiLocationOn
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.address}
-              </span>
-            </p>
-          </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
-              <IoLogoGithub
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
-              <BiLogoLinkedin
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            {/* <Link target="_blank" href={personalData.twitter}>
-              <FaXTwitter
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link> */}
-            {/* <Link target="_blank" href={personalData.stackOverflow}>
-              <FaStackOverflow
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link> */}
-            {/* <Link target="_blank" href={personalData.facebook}>
-              <FaFacebook
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link> */}
+
+      {/* Email-as-headline — the centerpiece */}
+      <motion.a
+        style={{ y: yEmail }}
+        href={`mailto:${personalData.email}`}
+        className="contact-email block group"
+        aria-label={`Send email to ${personalData.email}`}
+      >
+        <span className="block">hardiksaini830</span>
+        <span className="block editorial-italic text-[var(--amber-deep)]">
+          @gmail.com
+        </span>
+        <span className="contact-email-arrow" aria-hidden>↗</span>
+      </motion.a>
+
+      <div className="hairline mt-12 mb-10" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div>
+          <p className="mono text-[10px] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
+            Or find me
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Magnetic strength={0.25}>
+              <Link
+                href={personalData.linkedIn}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost text-xs no-underline"
+              >
+                <BsLinkedin /> LinkedIn
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.25}>
+              <Link
+                href={personalData.github}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost text-xs no-underline"
+              >
+                <BsGithub /> GitHub
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.25}>
+              <Link
+                href={personalData.resume}
+                target="_blank"
+                className="btn-ghost text-xs no-underline"
+              >
+                Resume <span aria-hidden>↗</span>
+              </Link>
+            </Magnetic>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
 
-export default ContactSection;
+        <div className="md:text-right">
+          <p className="mono text-[10px] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
+            Prefer a form?
+          </p>
+          <button
+            type="button"
+            onClick={() => setShowForm((v) => !v)}
+            className="mt-3 inline-flex items-center gap-2 text-base text-[var(--ink)] hover:text-[var(--amber-deep)] transition-colors"
+          >
+            {showForm ? "Hide message form" : "Send a message"}
+            <span aria-hidden>{showForm ? "↑" : "↓"}</span>
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {showForm && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }}
+            exit={{ opacity: 0, y: 16, transition: { duration: 0.3 } }}
+            className="mt-10 max-w-2xl mx-auto"
+          >
+            <ContactForm />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+}

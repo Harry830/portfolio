@@ -1,84 +1,38 @@
-// @flow strict
 import { educations } from "@/utils/data/educations";
-import Image from "next/image";
-import { BsPersonWorkspace } from "react-icons/bs";
-import lottieFile from '../../../assets/lottie/study.json';
-import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
 
-function Education() {
+export default function Education() {
   return (
-    <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <Image
-        src="/section.svg"
-        alt="Hero"
-        width={1572}
-        height={795}
-        className="absolute top-0 -z-10"
-      />
-      <div className="flex justify-center -translate-y-[1px]">
-        <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+    <section id="education" className="relative my-20 lg:my-28">
+      <header className="reveal reveal-up mb-10 lg:mb-14 grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">Education</p>
+          <h2 className="mt-4 display-lg text-[var(--ink)]">
+            Education &amp; <span className="editorial-italic text-[var(--amber-deep)]">credentials</span>.
+          </h2>
         </div>
-      </div>
+      </header>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Education & Certifications
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
-
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-3/4 h-3/4">
-              <AnimationLottie animationPath={lottieFile} />
-            </div>
-          </div>
-
-          <div>
-            <div className="flex flex-col gap-6">
-              {
-                educations.map(education => (
-                  <GlowCard key={education.id} identifier={`education-${education.id}`}>
-                    <div className="p-3 relative text-white">
-                      <Image
-                        src="/blur-23.svg"
-                        alt="Hero"
-                        width={1080}
-                        height={200}
-                        className="absolute bottom-0 opacity-80"
-                      />
-                      <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {education.duration}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                          <BsPersonWorkspace size={36} />
-                        </div>
-                        <div>
-                          <p className="text-base sm:text-xl mb-2 font-medium ">
-                            {education.title}
-                          </p>
-                          <p className="text-sm sm:text-base">{education.institution}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </GlowCard>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        {educations.map((e, i) => (
+          <li
+            key={e.id}
+            className="reveal reveal-up surface-paper lift p-6 lg:p-7 flex flex-col"
+          >
+            <p className="mono text-xs text-[var(--ink-faint)]">
+              {String(i + 1).padStart(2, "0")}
+            </p>
+            <p className="mt-3 mono text-[10px] uppercase tracking-[0.18em] text-[var(--amber-deep)]">
+              {e.duration}
+            </p>
+            <h3 className="mt-3 text-lg editorial text-[var(--ink)] leading-snug">
+              {e.title}
+            </h3>
+            <p className="mt-3 text-sm text-[var(--ink-muted)] mt-auto pt-4 border-t border-[var(--line)]">
+              {e.institution}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
-};
-
-export default Education;
+}
