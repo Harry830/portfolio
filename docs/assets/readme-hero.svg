@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" role="img" aria-label="Hardik Saini — Portfolio masthead. A bold, editorial portfolio for a builder at the intersection of AI, cloud, and enterprise systems.">
+  <title>Hardik Saini — Portfolio</title>
+
+  <defs>
+    <pattern id="grain" x="0" y="0" width="7" height="7" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.35" fill="#1A1410" opacity="0.05"/>
+      <circle cx="4" cy="5" r="0.28" fill="#1A1410" opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <!-- paper -->
+  <rect width="1280" height="440" fill="#F4ECDD"/>
+  <rect width="1280" height="440" fill="url(#grain)"/>
+
+  <!-- double frame -->
+  <rect x="24" y="24" width="1232" height="392" fill="none" stroke="#14110F" stroke-width="1.25"/>
+  <rect x="34" y="34" width="1212" height="372" fill="none" stroke="#14110F" stroke-width="0.4"/>
+
+  <!-- masthead -->
+  <text x="60" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="4" fill="#14110F">EST. ATLANTA &#8226; VOL. I &#8226; SHIPPED WITH CARE</text>
+  <text x="1220" y="76" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-size="13" letter-spacing="4" fill="#14110F">N&#176; 04 &#8226; MMXXVI</text>
+  <line x1="60" y1="90" x2="1220" y2="90" stroke="#14110F" stroke-width="1"/>
+  <line x1="60" y1="94" x2="1220" y2="94" stroke="#14110F" stroke-width="0.4"/>
+
+  <!-- left column: display name -->
+  <text x="58" y="218" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="700" fill="#14110F" letter-spacing="-3">Hardik Saini</text>
+
+  <!-- italic kicker -->
+  <text x="60" y="262" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#3F2E14">— Builder at the intersection of AI, cloud, &amp; enterprise systems.</text>
+
+  <!-- credit line -->
+  <text x="60" y="294" font-family="Georgia, serif" font-size="13" letter-spacing="2" fill="#14110F">COMPUTER SCIENCE &#8226; GEORGIA STATE UNIV. &#8226; ARCTIC HPC &#8226; MERCEDES-BENZ USA &#39;26</text>
+
+  <!-- column rule -->
+  <line x1="900" y1="118" x2="900" y2="350" stroke="#14110F" stroke-width="0.6"/>
+
+  <!-- monogram block -->
+  <rect x="938" y="132" width="142" height="142" fill="#14110F"/>
+  <rect x="1064" y="132" width="16" height="16" fill="#C77F3C"/>
+  <text x="1009" y="240" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="700" fill="#F4ECDD" letter-spacing="-4">HS</text>
+
+  <!-- field notes -->
+  <text x="1100" y="156" font-family="Georgia, serif" font-size="12" letter-spacing="3" fill="#14110F">FIELD NOTES</text>
+  <line x1="1100" y1="164" x2="1220" y2="164" stroke="#14110F" stroke-width="0.4"/>
+  <text x="1100" y="186" font-family="Georgia, serif" font-size="13" fill="#14110F">paper &amp; ink palette</text>
+  <text x="1100" y="206" font-family="Georgia, serif" font-size="13" fill="#14110F">a serif spine</text>
+  <text x="1100" y="226" font-family="Georgia, serif" font-size="13" fill="#14110F">quiet, intentional motion</text>
+  <text x="1100" y="252" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#3F2E14">— editorial, not decorative.</text>
+
+  <!-- ornament rule -->
+  <line x1="60" y1="324" x2="120" y2="324" stroke="#14110F" stroke-width="1"/>
+  <text x="138" y="329" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#14110F">&#9670;</text>
+  <line x1="156" y1="324" x2="880" y2="324" stroke="#14110F" stroke-width="0.4"/>
+
+  <!-- bottom rule -->
+  <line x1="60" y1="360" x2="1220" y2="360" stroke="#14110F" stroke-width="1"/>
+  <line x1="60" y1="364" x2="1220" y2="364" stroke="#14110F" stroke-width="0.4"/>
+
+  <!-- stack tags -->
+  <circle cx="68" cy="388" r="3.5" fill="#C77F3C"/>
+  <text x="82" y="392" font-family="Georgia, serif" font-size="13" letter-spacing="4" fill="#14110F">NEXT.JS 16 &#8226; REACT 19 &#8226; TAILWIND v4 &#8226; FRAMER MOTION &#8226; LENIS</text>
+  <text x="1220" y="392" text-anchor="end" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#C77F3C">harry830.tech &#8594;</text>
+</svg>
