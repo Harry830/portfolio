@@ -15,5 +15,5 @@ export const personalData = {
   linkedIn: "https://www.linkedin.com/in/hardiksaini830/",
   leetcode: "https://leetcode.com/u/harry830/",
   devUsername: "harry830",
-  resume: "https://github.com/Harry830/Resume/tree/main",
+  resume: "https://raw.githubusercontent.com/Harry830/Resume/main/Hardik_Saini_Resume.pdf",
 };
