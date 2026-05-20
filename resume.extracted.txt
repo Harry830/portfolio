@@ -7,7 +7,7 @@ Hardik Saini
 hsaini1@student.gsu.edu | (404) 203-2469 | linkedin.com/in/hardiksaini830/ | github.com/harry830 
 EDUCATION 
 Georgia State University, College of Arts & Sciences Atlanta, GA 
-Bachelor of Science | Major: CS | Honors College | GPA: 4.28/Major- 4.3 Expected Graduation: May 2027 
+Bachelor of Science | Major: CS | Honors College | GPA: 4.26 Expected Graduation: May 2027
 Certifications : 100 Days of Code | Angela Yu , Machine Learning Specialization | Andrew Ng 
 Technical: Cloud Computing, Slurm, Kubernetes Unix Operability, Git, Machine Learning, Programming Languages proficiency (Python ,C , Java), 
 Technology Integration, Office 365 SharePoint Administration, System Troubleshooting, Hardware Configuration , Basic CI/CD. 

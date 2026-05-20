@@ -4,7 +4,7 @@ import { personalData } from "@/utils/data/personal-data";
 const FACTS = [
   { k: "Based in", v: "Atlanta, GA" },
   { k: "Studying", v: "BS Computer Science · Honors" },
-  { k: "GPA", v: "4.25 / 4.30" },
+  { k: "GPA", v: "4.26 / 4.30" },
   { k: "Now", v: "ARCTIC HPC + MBUSA + CreateX" },
 ];
 
@@ -36,7 +36,7 @@ export default function AboutSection() {
               <span className="text-[var(--amber-deep)]">◆</span>
               <span>GPA</span>
               <span className="text-[var(--ink-faint)]">·</span>
-              <span>4.25 / 4.30</span>
+              <span>4.26 / 4.30</span>
               <span className="text-[var(--ink-faint)]">·</span>
               <span>Honors</span>
             </span>
@@ -69,16 +69,9 @@ export default function AboutSection() {
             I prefer <span className="editorial-italic text-[var(--amber-deep)]">building</span> over talking.
           </h2>
           <div className="mt-6 space-y-5 text-[var(--ink-muted)] text-base lg:text-lg leading-[1.75] max-w-2xl">
-            <p>{personalData.description}</p>
-            <p>
-              I&apos;m drawn to problems that sit at the boundary of software and
-              infrastructure — the messy seam where the system breaks under real
-              usage. That&apos;s where I do my best work.
-            </p>
-            <p>
-              When I&apos;m not building, I&apos;m at the gym, watching cricket, or
-              tearing apart hardware to see how it works.
-            </p>
+            {personalData.about.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </div>

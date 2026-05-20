@@ -47,7 +47,7 @@ export const projectsData = [
       "Tailwind",
     ],
     code: "",
-    demo: "",
+    demo: "https://roomiemanager.site/",
     image: "/image/projects/roomiemanager.png",
   },
   {
@@ -65,7 +65,7 @@ export const projectsData = [
     ],
     tools: ["Next.js", "TypeScript", "Postgres", "Tailwind", "OpenAI"],
     code: "",
-    demo: "",
+    demo: "https://tasktrail.site/",
     image: "/image/projects/tasktrail.png",
   },
   {
