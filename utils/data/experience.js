@@ -32,16 +32,18 @@ export const experiences = [
   },
   {
     id: 3,
-    title: "Tutor & Lab Facilitator",
-    company: "GSU – STEM Tutoring Initiative & MILE Urban Life",
+    title: "Co-Founder / Product Engineer",
+    company: "Stockd · Georgia Tech CreateX Summer 2026 Cohort",
     location: "Atlanta, GA",
-    duration: "Jun 2024 — Jul 2025",
+    duration: "Summer 2026 Cohort",
     summary:
-      "1:1 and group tutoring across algebra, calculus, and statistics for 800+ students.",
+      "Building Stockd through Georgia Tech's CreateX Summer 2026 cohort — taking a UGAHacks XI NCR Voyix Challenge-winning prototype and turning it into an early-stage restaurant operations startup focused on inventory, forecasting, and practical AI.",
     bullets: [
-      "Delivered targeted tutoring to 800+ students across algebra, calculus, and statistics.",
-      "Built tailored learning strategies that simplified problem-solving — meaningful improvement in student grades over the semester.",
-      "Created an environment students actually returned to: noticeably higher session retention semester-over-semester.",
+      "Leading product and backend direction for an AI-powered restaurant inventory platform shaped through CreateX mentorship, customer discovery, restaurant demos, and real operator pain points.",
+      "Designing core workflows around itemized sales ingestion, BOM/recipe-based ingredient usage, inventory transactions, vendor receiving, and reorder recommendations.",
+      "Developing forecasting systems that translate historical sales patterns into ingredient-level demand predictions and \"what should I order?\" decisions for restaurant teams.",
+      "Exploring AI copilot features with Gemini/OpenAI-style tool calling so non-technical managers can ask inventory and ordering questions in natural language.",
+      "Reworking the hackathon MVP into a pilot-ready SaaS foundation with onboarding, secure Supabase/Postgres architecture, ingestion pipelines, and repeatable operator workflows.",
     ],
   },
 ];

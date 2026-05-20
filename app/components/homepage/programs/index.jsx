@@ -20,23 +20,42 @@ export default function Programs() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         {programsData.map((p) => {
           const isCurrent = p.status === "current";
+          const hasLogo = Boolean(p.asset.src);
+          const isWideLogo = p.asset.variant === "wide" || p.asset.variant === "brand";
           return (
             <article
               key={p.id}
               className="reveal reveal-up surface-paper lift relative overflow-hidden p-7 lg:p-8"
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  {/* placeholder logo plate */}
-                  <div
-                    className="grid place-items-center w-14 h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-cream-soft)]"
-                    aria-hidden
-                  >
-                    <span className="editorial text-lg text-[var(--ink)]">
-                      {p.asset.placeholderInitials}
-                    </span>
-                  </div>
-                  <div>
+                <div
+                  className={
+                    isWideLogo
+                      ? "flex min-w-0 flex-col items-start gap-3"
+                      : "flex items-center gap-4"
+                  }
+                >
+                  {hasLogo ? (
+                    <img
+                      src={p.asset.src}
+                      alt={p.asset.alt ?? `${p.name} logo`}
+                      className={
+                        isWideLogo
+                          ? "h-auto w-full max-w-[260px] object-contain object-left"
+                          : "max-h-11 max-w-11 shrink-0 object-contain"
+                      }
+                    />
+                  ) : (
+                    <div
+                      className="grid place-items-center w-14 h-14 shrink-0 rounded-xl border border-[var(--line)] bg-[var(--bg-cream-soft)]"
+                      aria-hidden
+                    >
+                      <span className="editorial text-lg text-[var(--ink)]">
+                        {p.asset.placeholderInitials}
+                      </span>
+                    </div>
+                  )}
+                  <div className="min-w-0">
                     <h3 className="display-md text-[var(--ink)] text-[1.5rem]">
                       {p.name}
                     </h3>
@@ -67,9 +86,11 @@ export default function Programs() {
                 {p.description}
               </p>
 
-              <p className="mt-4 mono text-[10px] tracking-[0.2em] uppercase text-[var(--ink-ghost)]">
-                Logo placeholder · drop asset → {p.asset.suggestedFile}
-              </p>
+              {p.asset.suggestedFile ? (
+                <p className="mt-4 mono text-[10px] tracking-[0.2em] uppercase text-[var(--ink-ghost)]">
+                  Logo placeholder · drop asset → {p.asset.suggestedFile}
+                </p>
+              ) : null}
             </article>
           );
         })}
