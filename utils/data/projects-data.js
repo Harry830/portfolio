@@ -6,11 +6,11 @@ export const projectsData = [
     year: "2026",
     role: "Backend Architect · Co-Founder",
     description:
-      "An AI-powered inventory platform for restaurants. Real-time tracking on a transaction ledger, recipe/BOM-based ingredient usage, and a Gemini copilot operators can ask in plain English — \"what's running low?\", \"what should I order this week?\". Built for non-technical users, scaled for modern restaurant operations.",
+      "Restaurant inventory and forecasting built on PostgreSQL 17 and Supabase. An immutable transaction ledger tracks receiving, counts, and recipe-based ingredient consumption. A Gemini copilot uses function tools to read and update inventory through natural-language requests.",
     impact: [
       "Won UGAHACKS XI · NCR Voyix Track",
-      "Real-time inventory + Gemini-powered ordering copilot",
-      "Demo trusted by real restaurant operators",
+      "32+ Gemini function tools for inventory workflows",
+      "Six-week forecasting · 13% MAPE on rolling evaluation",
     ],
     tools: [
       "Supabase (Postgres · Realtime · Auth · RLS)",
@@ -28,15 +28,15 @@ export const projectsData = [
   {
     id: 2,
     name: "RoomieManager",
-    tagline: "AI roommate manager for chores, bills, and the small stuff.",
+    tagline: "Shared chores, bills, and house agreements.",
     year: "2026",
     role: "Founder · Full-stack",
     description:
-      "A lightweight roommate operating system. Splits chores fairly, tracks shared bills, and uses AI to nudge the right person at the right time so households stop fighting about whose turn it is. Designed mobile-first for the way people actually live together.",
+      "A shared household app for recurring chores, bills, settlements, and house agreements. Round-robin assignments keep responsibilities clear, while versioned agreements give roommates a common record. Available on the web and Android.",
     impact: [
-      "Built in CreateX summer cohort",
-      "AI scheduling + fair-split rotation logic",
-      "Mobile-first product surface",
+      "Recurring chores with round-robin assignments",
+      "Shared bills and settlements",
+      "Web + Android app",
     ],
     tools: [
       "Next.js",
@@ -53,15 +53,15 @@ export const projectsData = [
   {
     id: 3,
     name: "TaskTrail",
-    tagline: "Personal workflow OS for builders.",
+    tagline: "Team tasks and recurring work, in one place.",
     year: "2026",
     role: "Founder · Full-stack",
     description:
-      "A focused task and project tracker built for people who context-switch all day. Captures fast, organizes by intent (not just labels), and uses AI to surface what actually matters next. Less Notion overhead, more momentum.",
+      "A team task-management platform for managers and employees to organize assignments and recurring work. Web and mobile clients share one backend, hosted on Oracle’s Always Free infrastructure.",
     impact: [
-      "Capture-first input with intent inference",
-      "AI prioritization based on deadlines + dependencies",
-      "Keyboard-driven UX",
+      "Manager and employee workflows",
+      "Recurring task management",
+      "Shared backend for web and mobile",
     ],
     tools: ["Next.js", "TypeScript", "Postgres", "Tailwind", "OpenAI"],
     code: "",
@@ -102,10 +102,10 @@ export const projectsData = [
     year: "Fall 2024",
     role: "Full-stack · AI",
     description:
-      "Built a scalable GPT framework with Python, Flask, LangChain, and Azure to deliver department-specific virtual assistants from uploaded resources — FAQs, policies, contacts. Departments upload their content; the assistant answers students automatically and learns as scenarios change.",
+      "A customizable GPT assistant for university departments, built with Python, Flask, LangChain, and Azure. It uses retrieval-augmented generation to answer questions from department resources such as FAQs, policies, and contact directories.",
     impact: [
       "Built at HackGTXI (Georgia Tech)",
-      "Cut manual support load dramatically for early adopters",
+      "Department-specific answers grounded in uploaded resources",
       "Pluggable resource ingestion",
     ],
     tools: ["Python", "Flask", "LangChain", "Azure"],

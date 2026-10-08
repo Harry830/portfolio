@@ -105,7 +105,7 @@ function PinnedMercedesFeature() {
     <section
       ref={ref}
       className="bleed mercedes-pin"
-      aria-label="Featured: Mercedes-Benz USA internship — Summer 2026"
+      aria-label="Featured: Applied AI internship at Mercedes-Benz USA"
       style={{
         position: "relative",
         height: "280vh",
@@ -160,7 +160,7 @@ function PinnedMercedesFeature() {
         <div className="mercedes-stage">
           <div className="mercedes-copy">
             <p className="mono text-[10px] tracking-[0.32em] uppercase text-[var(--chrome-2)] mb-6">
-              ◆ Featured · Summer 2026
+              ◆ Featured · Applied AI
             </p>
 
             <motion.h2
@@ -170,7 +170,7 @@ function PinnedMercedesFeature() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="mercedes-title chrome-text"
             >
-              <span className="block">Joining</span>
+              <span className="block">Applied AI</span>
               <span className="block editorial-italic">@ Mercedes-Benz</span>
               <span className="block">USA</span>
             </motion.h2>
@@ -246,17 +246,17 @@ function StaticMercedesFeature() {
   return (
     <section
       className="bleed mercedes-scene relative my-24 lg:my-36"
-      aria-label="Featured: Mercedes-Benz USA internship — Summer 2026"
+      aria-label="Featured: Applied AI internship at Mercedes-Benz USA"
     >
       <span className="chrome-rail top-0 left-0 right-0" />
       <span className="chrome-rail bottom-0 left-0 right-0" />
       <div className="mercedes-stage">
         <div className="mercedes-copy">
           <p className="mono text-[10px] tracking-[0.32em] uppercase text-[var(--chrome-2)] mb-6">
-            ◆ Featured · Summer 2026
+            ◆ Featured · Applied AI
           </p>
           <h2 className="mercedes-title chrome-text">
-            <span className="block">Joining</span>
+            <span className="block">Applied AI</span>
             <span className="block editorial-italic">@ Mercedes-Benz</span>
             <span className="block">USA</span>
           </h2>
@@ -290,30 +290,29 @@ function MercedesMeta() {
             Role
           </p>
           <p className="mt-2 text-[var(--chrome-1)] text-base">
-            SAP &amp; Innovation Intern
+            Applied AI Intern
           </p>
         </div>
         <div className="border-t border-white/15 pt-4">
           <p className="mono text-[10px] uppercase tracking-[0.22em] text-[var(--chrome-2)]">
             When
           </p>
-          <p className="mt-2 text-[var(--chrome-1)] text-base">Summer 2026</p>
+          <p className="mt-2 text-[var(--chrome-1)] text-base">Jun 2026 — Present</p>
         </div>
         <div className="border-t border-white/15 pt-4">
           <p className="mono text-[10px] uppercase tracking-[0.22em] text-[var(--chrome-2)]">
             Where
           </p>
           <p className="mt-2 text-[var(--chrome-1)] text-base">
-            MBUSA HQ · Atlanta, GA
+            Sandy Springs, GA
           </p>
         </div>
       </div>
 
       <p className="mt-8 max-w-2xl text-[var(--chrome-1)]/80 text-base lg:text-lg leading-relaxed">
-        Joining the SAP &amp; Innovation team to support enterprise integrations,
-        internal tooling, and workflow automation that scales across business
-        units — bridging engineering rigor with operational reality at a global
-        automotive enterprise.
+        Working on applied AI and enterprise automation with the Parts Supply
+        Chain Systems &amp; Process Innovation Team — building software,
+        supporting integrations, and evaluating tools for reliable business applications.
       </p>
     </>
   );

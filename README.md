@@ -41,7 +41,7 @@
 <td align="center" width="33%">
 <sub>THE&nbsp;NEXT&nbsp;CHAPTER</sub><br/>
 <b>Mercedes-Benz&nbsp;USA</b><br/>
-<sub>SAP & Innovation · Summer&nbsp;'26</sub>
+<sub>Applied AI · MBUSA</sub>
 </td>
 </tr>
 </table>
@@ -52,7 +52,7 @@
 
 Think of this as a **personal letterpress** — a site composed like an editorial spread. A serif spine. A paper-and-ink palette. Generous whitespace. Motion that *supports* the content rather than performing for it.
 
-Built by **Hardik Saini** — Computer Science junior at **Georgia State University**, member of the **ARCTIC HPC** team, and incoming **Mercedes-Benz USA** SAP & Innovation intern (Summer 2026).
+Built by **Hardik Saini** — Honors Computer Science student at **Georgia State University**, **DevOps Assistant at ARCTIC**, and **Applied AI Intern at Mercedes-Benz USA**.
 
 > 🌐 &nbsp; Live at **[www.harry830.tech](https://www.harry830.tech)**
 
@@ -63,7 +63,7 @@ Built by **Hardik Saini** — Computer Science junior at **Georgia State Univers
 | &nbsp; | Section | What lives here |
 |:---:|---|---|
 | 𝟏 | **Hero** | Display-serif identity card with role-cycling and an ambient marquee. |
-| 𝟐 | **Mercedes Feature** | Editorial spotlight on the incoming MBUSA internship. |
+| 𝟐 | **Mercedes Feature** | Editorial spotlight on the Applied AI internship at MBUSA. |
 | 𝟑 | **Selected Work** | Horizontally scrolling case studies — Stockd, RoomieManager, TaskTrail, Speech Mate, Department Assistant. |
 | 𝟒 | **Experience** | Roles, programs, and the timeline behind them. |
 | 𝟓 | **About** | Long-form bio, programs, professional development, skills, education, and awards. |
@@ -216,7 +216,7 @@ portfolio/
 
 **Hardik Saini** — Builder. Atlanta, GA.
 
-A computer science junior who likes shipping things that feel as considered as they look. Currently working on AI, cloud, and enterprise systems — and reading anything with good kerning.
+An Honors Computer Science student interested in AI, cloud computing, and platform engineering. Working on applied AI at Mercedes-Benz USA and research computing with GSU’s ARCTIC team.
 
 </td>
 <td valign="top" align="right">

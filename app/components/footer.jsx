@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-7">
             <p className="eyebrow mb-4">Currently</p>
             <p className="display-md text-[var(--ink)]">
-              Open to summer + fall
+              Open to
               <br />
               <span className="editorial-italic text-[var(--amber-deep)]">
                 opportunities, conversations, and good ideas.

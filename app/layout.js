@@ -11,6 +11,7 @@ import SmoothScroll from "./components/providers/smooth-scroll";
 import Preloader from "./components/effects/preloader";
 import ScrollProgress from "./components/effects/scroll-progress";
 import "./css/globals.scss";
+import { personalData } from "@/utils/data/personal-data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,14 +27,12 @@ const fraunces = Fraunces({
 });
 
 export const metadata = {
-  title: "Hardik Saini — CS @ GSU · ARCTIC HPC · Incoming MBUSA Intern",
-  description:
-    "Hardik Saini is a CS junior at Georgia State, ARCTIC HPC team member, and incoming Mercedes-Benz USA SAP & Innovation intern (Summer 2026). I build practical AI, cloud, and enterprise tools.",
-  metadataBase: new URL("https://hardiksaini.com"),
+  title: "Hardik Saini — Applied AI Intern @ Mercedes-Benz USA",
+  description: personalData.description,
+  metadataBase: new URL("https://harry830.tech"),
   openGraph: {
-    title: "Hardik Saini — Builder",
-    description:
-      "Practical AI, cloud, and enterprise tools that turn messy workflows into usable systems.",
+    title: "Hardik Saini — Applied AI · Software · Infrastructure",
+    description: personalData.description,
     type: "website",
   },
 };

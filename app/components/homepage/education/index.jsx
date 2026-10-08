@@ -30,6 +30,11 @@ export default function Education() {
             <p className="mt-3 text-sm text-[var(--ink-muted)] mt-auto pt-4 border-t border-[var(--line)]">
               {e.institution}
             </p>
+            {e.credential && (
+              <a href={e.credential} target="_blank" rel="noopener noreferrer" className="mt-3 text-sm text-[var(--amber-deep)] underline underline-offset-4">
+                View credential <span aria-hidden>↗</span>
+              </a>
+            )}
           </li>
         ))}
       </ul>

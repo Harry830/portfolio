@@ -18,10 +18,10 @@ export const awards = [
   },
   {
     id: 3,
-    title: "President's List (5x)",
+    title: "President's List (6x)",
     issuer: "",
     date: "",
-    description: "Recognized on the President's List five times for academic excellence.",
+    description: "Recognized on the President's List six times for academic excellence.",
     link: "https://meritpages.com/harry830",
   },
   {

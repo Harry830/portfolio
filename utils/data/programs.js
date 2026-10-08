@@ -8,11 +8,11 @@ export const programsData = [
     name: "CreateX",
     affiliation: "Georgia Tech",
     role: "Summer 2026 Cohort",
-    status: "current",
-    statusLabel: "Now",
+    status: "milestone",
+    statusLabel: "Cohort",
     timeline: "Summer 2026 Cohort",
     description:
-      "Building Stockd inside Georgia Tech’s CreateX Summer cohort — taking what started as a hackathon project and pushing it toward real customer discovery, sharper product decisions, and a path to actual users.",
+      "Stockd joined Georgia Tech’s CreateX Summer 2026 cohort, developing a hackathon project through customer discovery, mentorship, and product development.",
     asset: {
       src: "/image/programs/launch-createx.png",
       alt: "Launch Create-X logo",

@@ -1,21 +1,18 @@
-/**
- * Skills shown in the marquee.
- * Keep this list focused — recruiters skim, not read.
- */
+/** A focused selection from the LinkedIn profile for the portfolio toolkit. */
 export const skillsData = [
   "Python",
   "Java",
   "TypeScript",
-  "Next.js",
+  "SQL",
   "React",
-  "Node.js",
+  "RAG",
   "Spring Boot",
   "PostgreSQL",
   "Supabase",
-  "AWS",
+  "LLMs",
+  "AI Agents",
+  "DevOps",
   "Azure",
-  "Docker",
-  "Kubernetes",
   "Linux",
   "Slurm",
   "Git",

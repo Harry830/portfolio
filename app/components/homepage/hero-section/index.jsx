@@ -9,7 +9,7 @@ import Magnetic from "@/app/components/effects/magnetic";
 const PILLARS = [
   { k: "01", v: "CS @ Georgia State" },
   { k: "02", v: "ARCTIC HPC team" },
-  { k: "03", v: "Mercedes-Benz USA · Summer '26" },
+  { k: "03", v: "Applied AI · Mercedes-Benz USA" },
   { k: "04", v: "Startup builder" },
 ];
 
@@ -87,7 +87,7 @@ export default function HeroSection() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--amber)] opacity-60 animate-ping" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--amber-deep)]" />
           </span>
-          <p className="eyebrow">Available · Summer & Fall 2026</p>
+          <p className="eyebrow">Applied AI · Software · Infrastructure</p>
         </div>
         <p className="mono text-[11px] tracking-[0.22em] uppercase text-[var(--ink-faint)]">
           Atlanta, GA · {now} ET
@@ -202,15 +202,9 @@ export default function HeroSection() {
                 <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_60px_rgba(200,132,61,0.1)] z-10 pointer-events-none" />
                 
                 <img
-                  src="/profile-cutout.jpg"
+                  src={personalData.profile}
                   alt="Hardik Saini"
-                  className="w-full h-full object-cover object-center"
-                  style={{
-                    filter: 'contrast(1.05) saturate(1.1)',
-                  }}
-                  onError={(e) => {
-                    e.target.src = personalData.profile;
-                  }}
+                  className="w-full h-full object-cover object-center scale-[1.8] origin-[50%_35%]"
                 />
                 
                 {/* Elegant gradient overlay at bottom */}
@@ -255,13 +249,11 @@ export default function HeroSection() {
       >
         <div className="lg:col-span-7">
           <p className="text-lg lg:text-xl text-[var(--ink-muted)] leading-relaxed max-w-2xl">
-            I turn messy real-world workflows into systems people actually want
-            to use — joining{" "}
+            I work on applied AI and enterprise automation at{" "}
             <span className="text-[var(--ink)] font-medium">Mercedes-Benz USA</span>{" "}
-            this summer as an SAP &amp; Innovation intern, operating research HPC with{" "}
-            <span className="text-[var(--ink)] font-medium">GSU&apos;s ARCTIC team</span>
-            , and shipping startup ideas through{" "}
-            <span className="text-[var(--ink)] font-medium">CreateX</span>.
+            and support research computing with{" "}
+            <span className="text-[var(--ink)] font-medium">GSU&apos;s ARCTIC team</span>.
+            Outside work, I build with friends and compete in hackathons.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Magnetic strength={0.3}>

@@ -5,7 +5,7 @@ const FACTS = [
   { k: "Based in", v: "Atlanta, GA" },
   { k: "Studying", v: "BS Computer Science · Honors" },
   { k: "GPA", v: "4.26 / 4.30" },
-  { k: "Now", v: "ARCTIC HPC + MBUSA + CreateX" },
+  { k: "Now", v: "Applied AI · MBUSA / ARCTIC" },
 ];
 
 export default function AboutSection() {
@@ -22,7 +22,7 @@ export default function AboutSection() {
                   alt={`Portrait of ${personalData.name}`}
                   fill
                   sizes="(min-width: 1024px) 420px, 80vw"
-                  className="object-cover"
+                  className="object-cover scale-[1.8] origin-[50%_35%]"
                   priority={false}
                 />
               </div>
@@ -66,7 +66,7 @@ export default function AboutSection() {
         <div className="reveal reveal-up delay-160 lg:col-span-7 lg:pt-6">
           <p className="eyebrow">About</p>
           <h2 className="mt-4 display-lg text-[var(--ink)]">
-            I prefer <span className="editorial-italic text-[var(--amber-deep)]">building</span> over talking.
+            Curious about how <span className="editorial-italic text-[var(--amber-deep)]">things work</span>.
           </h2>
           <div className="mt-6 space-y-5 text-[var(--ink-muted)] text-base lg:text-lg leading-[1.75] max-w-2xl">
             {personalData.about.map((paragraph) => (
